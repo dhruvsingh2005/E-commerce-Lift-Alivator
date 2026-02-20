@@ -293,10 +293,10 @@ const Add = ({ token }) => {
                   Drive:
                 </label>
                 <select
-                  className="w-full md:w-3/4 bg-black border border-white/60 p-2 outline-none focus:border-primary text-white text-xs font-manrope transition-colors rounded-sm"
+                  className="w-full md:w-3/4 bg-black border border-white/60 p-2 outline-none focus:border-primary text-primary text-xs font-manrope transition-colors rounded-sm"
                   required
                 >
-                  <option className="bg-white/5text-white" value="">Select Drive Type</option>
+                  <option className="bg-black text-primary" value="">Select Drive Type</option>
                   <option className="bg-black text-white" value="Gearless">Gearless</option>
                   <option className="bg-black text-white" value="Geared">Geared</option>
                   <option className="bg-black text-white" value="Hydraulic">Hydraulic</option>
