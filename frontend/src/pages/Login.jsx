@@ -51,7 +51,7 @@ const Login = () => {
     <div className="min-h-screen pt-32 flex flex-col items-center bg-background-dark px-6">
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #c9a74a 1px, transparent 0)", backgroundSize: "48px 48px" }}></div>
       
-      <form onSubmit={onSubmitHandler} className="w-full max-w-md glass-card border border-white/10 p-10 rounded-sm relative z-10">
+      <form onSubmit={onSubmitHandler} className="w-full max-w-md glass-card border border-blue/10 p-10 rounded-sm relative z-10">
         <div className="text-center mb-10">
           <p className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-4 font-manrope">Security Portal</p>
           <h2 className="serif-title text-4xl text-white mb-2">{currentState}</h2>
