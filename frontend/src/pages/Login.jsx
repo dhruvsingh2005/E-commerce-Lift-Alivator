@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { ArrowRight, User, Mail, Lock, ShieldCheck } from "lucide-react";
+import { ArrowRight, User, Mail, Lock, ShieldCheck, Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
@@ -11,6 +11,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -90,11 +91,18 @@ const Login = () => {
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-              type="password"
-              className="w-full bg-white/5 border border-white/10 p-4 pl-12 outline-none focus:border-primary text-white text-sm transition-colors rounded-sm font-manrope"
+              type={showPassword ? "text" : "password"}
+              className="w-full bg-white/5 border border-white/10 p-4 pl-12 pr-12 outline-none focus:border-primary text-white text-sm transition-colors rounded-sm font-manrope"
               placeholder="Private Password"
               required
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary transition-colors"
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
           </div>
         </div>
 
