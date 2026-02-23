@@ -5,7 +5,6 @@ import ContactSection from "../components/ContactSection";
 import { ChevronDown } from "lucide-react";
 
 const Collection = () => {
-    {/* ... other code remains same ... */}
   const { products, search, showSearch } = useContext(ShopContext);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState("All");
@@ -14,7 +13,7 @@ const Collection = () => {
   const dropdownRef = useRef(null);
 
   const categories = ["All", "Residential", "Commercial", "Hospitality", "Industrial", "Goods"];
-  
+
   const priceRanges = [
     { label: 'All Prices', value: 'all', min: 0, max: Infinity },
     { label: '₹0 - ₹25,000', value: '0-25000', min: 0, max: 25000 },
@@ -41,10 +40,9 @@ const Collection = () => {
       productsCopy = productsCopy.filter((item) => item.category === category);
     }
 
-    // Apply price filter
     const priceRange = priceRanges.find(range => range.value === selectedPrice);
     if (priceRange) {
-      productsCopy = productsCopy.filter((item) => 
+      productsCopy = productsCopy.filter((item) =>
         item.price >= priceRange.min && item.price <= priceRange.max
       );
     }
@@ -56,7 +54,6 @@ const Collection = () => {
     applyFilter();
   }, [category, products, search, showSearch, selectedPrice]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -77,12 +74,12 @@ const Collection = () => {
         <div className="absolute inset-0 flex items-center justify-center opacity-10 select-none pointer-events-none">
           <span className="text-[320px] font-black text-primary leading-none">02</span>
         </div>
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="relative z-50 flex flex-col items-center">
           <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4">Our Collection</p>
           <h2 className="serif-title text-5xl md:text-7xl font-light text-white mb-12">Elevators & Lifts</h2>
-          
+
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-12 mt-4 relative z-20">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-12 mt-4 relative z-30">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -96,19 +93,22 @@ const Collection = () => {
                 {cat}
               </button>
             ))}
-            
+
             {/* Price Filter Dropdown */}
-            <div className="relative z-50" ref={dropdownRef}>
+            <div className="relative z-40" ref={dropdownRef}>
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'price' ? null : 'price')}
-                className="flex items-center gap-2 pb-2 text-sm font-bold text-white/40 hover:text-white transition-all"
+                className="flex items-center gap-2 px-3 py-2 bg-black text-white border border-gray-600 rounded"
               >
                 <span>Price</span>
-                <ChevronDown size={14} className={`transition-transform ${openDropdown === 'price' ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform ${openDropdown === 'price' ? 'rotate-180' : ''}`}
+                />
               </button>
-              
+
               {openDropdown === 'price' && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-obsidian border border-primary/30 rounded shadow-2xl z-50 min-w-64 max-h-96 overflow-y-auto">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-obsidian border border-primary/30 rounded shadow-2xl z-[100] min-w-64 max-h-96 overflow-y-auto">
                   {priceRanges.map((range) => (
                     <button
                       key={range.value}
