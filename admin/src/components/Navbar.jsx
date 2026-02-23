@@ -6,15 +6,11 @@ const Navbar = ({ setToken }) => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-obsidian border-b border-white/5 px-6 lg:px-12 py-4">
       <div className="flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="text-primary transition-transform group-hover:scale-110">
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path clipRule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fillRule="evenodd"></path>
-            </svg>
-          </div>
+        <Link to="/" className="flex items-center gap-4 group">
+          <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-20 w-28 transition-transform group-hover:scale-110" />
           <div className="flex flex-col">
-            <span className="serif-title text-xl font-medium tracking-widest uppercase text-white leading-none">Winsume Lift</span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-primary font-black mt-1">Management Portal</span>
+            <span className="serif-title text-2xl font-medium tracking-widest uppercase text-white leading-none">Winsume Lift India</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-primary font-medium">Private Limited</span>
           </div>
         </Link>
         

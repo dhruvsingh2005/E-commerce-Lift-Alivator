@@ -17,17 +17,16 @@ const NavBar = () => {
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-obsidian/80 backdrop-blur-md border-b border-primary/10">
-            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-3">
-                    <div className="text-primary">
-                        <svg className="w-8 h-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path clipRule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fillRule="evenodd"></path>
-                        </svg>
+            <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
+                <Link to="/" className="flex items-center gap-4">
+                    <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-20 w-28" />
+                    <div className="flex flex-col">
+                        <span className="serif-title text-2xl font-medium tracking-wider uppercase text-white leading-tight">Winsume Lift India</span>
+                        <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
                     </div>
-                    <span className="serif-title text-xl font-medium tracking-widest uppercase text-white">Winsume Lift</span>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.2em] font-medium text-white/60">
+                <div className="hidden md:flex items-center gap-10 text-[13px] uppercase tracking-[0.2em] font-medium text-white/60">
                     <NavLink to="/portfolio" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Portfolio</NavLink>
                     <NavLink to="/collection" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Collection</NavLink>
                     <NavLink to="/services" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Services</NavLink>
@@ -40,7 +39,7 @@ const NavBar = () => {
                         <>
                             <div className='group relative'>
                                 <Link to="/orders" className="text-white/60 hover:text-primary transition-colors">
-                                    <User size={20} />
+                                    <User size={24} />
                                 </Link>
                                 <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
                                     <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-background-dark border border-white/10 text-white/60 rounded text-[10px] uppercase tracking-widest font-bold'>
@@ -61,11 +60,11 @@ const NavBar = () => {
                         </>
                     ) : (
                         <Link to="/login" className="text-white/60 hover:text-primary transition-colors">
-                            <User size={20} />
+                            <User size={24} />
                         </Link>
                     )}
                     
-                    <Link to="/contact" className="hidden sm:block bg-primary text-obsidian px-6 py-2 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
+                    <Link to="/contact" className="hidden sm:block bg-primary text-obsidian px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
                         Inquire
                     </Link>
                     <button onClick={() => setVisible(!visible)} className="md:hidden text-white">
