@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Menu, X, ShoppingBag, User, LogOut } from 'lucide-react'
 import { ShopContext } from '../context/ShopContext'
+import { assets } from '../assets/assets'
 
 const NavBar = () => {
     const [visible, setVisible] = useState(false);
@@ -16,13 +17,13 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-obsidian/80 backdrop-blur-md border-b border-primary/10">
-            <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-4">
-                    <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-20 w-28" />
+        <nav className="fixed top-0 w-full z-50 bg-black backdrop-blur-md border-b border-primary/10">
+            <div className="max-w-6xl mx-auto px-4 h-24 flex items-center justify-between gap-10">
+                <Link to="/" className="flex items-center gap-2">
+                    <img src={assets.logo} alt="Winsume Lift Logo" className="h-16 w-auto object-contain" />
                     <div className="flex flex-col">
-                        <span className="serif-title text-2xl font-medium tracking-wider uppercase text-white leading-tight">Winsume Lift India</span>
-                        <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
+                        <span className="serif-title text-lg font-semibold tracking-wider uppercase text-white leading-tight whitespace-nowrap">Winsume Lift India</span>
+                        <span className="serif-title text-[10px] font-semibold tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
                     </div>
                 </Link>
 

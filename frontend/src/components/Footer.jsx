@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Share2 } from 'lucide-react'
+import { assets } from '../assets/assets'
 
 const Footer = () => {
 
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="max-w-xs">
           <div className="flex items-center gap-4 mb-8">
-            <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-16 w-22" />
+            <img src={assets.logo} alt="Winsume Lift Logo" className="h-28 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="serif-title text-2xl font-medium tracking-wider uppercase text-white leading-tight">Winsume Lift India</span>
               <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
