@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactSection from '../components/ContactSection'
+import { Briefcase, Users, Building2, Scale, TrendingUp, FileCheck } from 'lucide-react'
 
 const About = () => {
     return (
@@ -51,25 +52,32 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Innovation Area */}
+            {/* Company & Compliance */}
             <section className="py-32 bg-white/5 relative border-y border-primary/10">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                        <div className="max-w-xl relative">
-                            <div className="absolute -top-16 -left-10 section-number text-[12rem] font-bold opacity-10">02</div>
-                            <h2 className="serif-title text-4xl md:text-5xl mb-6 relative z-10 text-white">Innovation & <br /><span className="italic text-primary">Engineering</span></h2>
-                            <p className="text-white/60 font-light">Redefining the physics of vertical movement. Our engineering core focuses on near-silent operation, zero-vibration technology, and intelligent dispatch systems.</p>
-                        </div>
-                        <div className="flex gap-12 border-l border-primary/20 pl-12 py-4">
-                            <div className="text-center">
-                                <div className="text-3xl serif-title text-primary mb-1">0.1mm</div>
-                                <div className="text-[9px] uppercase tracking-widest text-white/40 font-bold">Precision Leveling</div>
+                    <div className="relative mb-16">
+                        <h2 className="serif-title text-4xl md:text-5xl mb-6 relative z-10 text-white">Company & <br /><span className="italic text-primary">Compliance</span></h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 relative z-10">
+                        {[
+                            { icon: Briefcase, label: "Nature of Business", value: "Service Provider and Others" },
+                            { icon: Users, label: "Total Number of Employees", value: "Upto 10 People" },
+                            { icon: Building2, label: "GST Registration Date", value: "01-08-2022" },
+                            { icon: Scale, label: "Legal Status of Firm", value: "Limited Company" },
+                            { icon: TrendingUp, label: "Annual Turnover", value: "1.5 - 5 Cr" },
+                            { icon: FileCheck, label: "GST No.", value: "23AACCW7463L1ZY" },
+                            { icon: FileCheck, label: "CIN No.", value: "U31909MP2020PTC052784" },
+                        ].map((item, index) => (
+                            <div key={index} className="flex gap-4 p-6 rounded-sm border border-primary/20 bg-obsidian/50 hover:border-primary/40 transition-colors">
+                                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-sm border border-primary/50 bg-primary/5">
+                                    <item.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                                </div>
+                                <div className="min-w-0">
+                                    <p className="text-white/50 text-xs uppercase tracking-wider font-medium mb-1">{item.label}</p>
+                                    <p className="text-white font-semibold serif-title">{item.value}</p>
+                                </div>
                             </div>
-                            <div className="text-center">
-                                <div className="text-3xl serif-title text-primary mb-1">&lt;35dB</div>
-                                <div className="text-[9px] uppercase tracking-widest text-white/40 font-bold">Acoustic Comfort</div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
