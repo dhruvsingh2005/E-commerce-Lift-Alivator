@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import About from './pages/About'
@@ -20,6 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <div className='min-h-screen bg-background-dark'>
+      <ScrollToTop />
       <ToastContainer position="top-right" theme="dark" />
       <NavBar />
       <Routes>
