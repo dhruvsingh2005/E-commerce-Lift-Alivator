@@ -18,9 +18,9 @@ const NavBar = () => {
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-black backdrop-blur-md border-b border-primary/10">
-            <div className="max-w-6xl mx-auto px-4 h-24 flex items-center justify-between gap-10">
-                <Link to="/" className="flex items-center gap-2">
-                    <img src={assets.logo} alt="Winsume Lift Logo" className="h-16 w-auto object-contain" />
+            <div className="w-full pl-5 pr-8 lg:pl-12 lg:pr-16 h-24 flex items-center justify-between gap-10">
+                <Link to="/" className="flex items-center gap-2 shrink-0 mr-8 md:mr-12">
+                    <img src={assets.logo1} alt="Winsume Lift Logo" className="h-24 w-auto object-contain" />
                     <div className="flex flex-col">
                         <span className="serif-title text-lg font-semibold tracking-wider uppercase text-white leading-tight whitespace-nowrap">Winsume Lift India</span>
                         <span className="serif-title text-[10px] font-semibold tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
