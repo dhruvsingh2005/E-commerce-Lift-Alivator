@@ -34,7 +34,6 @@ const Portfolio = () => {
                     <span className="section-marker opacity-10 font-serif text-[12rem] text-primary">04</span>
                 </div>
                 <div className="relative z-10 w-full lg:pl-48">
-                    <p className="text-primary font-manrope text-[10px] tracking-[0.5em] uppercase mb-4">Portfolio</p>
                     <h1 className="serif-title text-6xl md:text-8xl text-white font-medium mb-8">Our Work</h1>
                     <div className="gold-hairline mt-4"></div>
                 </div>
