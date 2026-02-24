@@ -15,7 +15,16 @@ const Home = () => {
     <div className='flex flex-col pb-20'>
       {/* Hero Section */}
       <section className="relative h-screen w-full flex flex-col overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs9FdesHnmX024xTO3sVRLoChUARVMNMFKcpPDPHkyH5HSECfJAIP4HjbB6AOC12T356VJMujRyE-V4x3eAtUZlnR50EP_vo_qp7__qoAFG5_bd4KHC_NXyDDApS93Vk1CeumhvtwwqK1Bd9UCYY0n-sbeK8tpVx9rfPcj1JPzbLWpf2zNr0iZX3J18hpfc2GdSpMpdM8bY0XXxroVxAsSErdadCLSYFSedcJ5tUU-cn2_9w-cLJNKMhSUGXXsyJPCbLWn9vDUhJ-7')" }}>
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/elevator.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
@@ -86,23 +95,7 @@ const Home = () => {
           </div>
 
           {/* RIGHT SIDE stays SAME */}
-          <div className="relative w-full lg:w-[45%] h-full flex items-center justify-center pt-20 lg:pt-0">
-
-            <div className="relative z-10 w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden border border-white/10 bg-neutral-900 shadow-2xl">
-
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs9FdesHnmX024xTO3sVRLoChUARVMNMFKcpPDPHkyH5HSECfJAIP4HjbB6AOC12T356VJMujRyE-V4x3eAtUZlnR50EP_vo_qp7__qoAFG5_bd4KHC_NXyDDApS93Vk1CeumhvtwwqK1Bd9UCYY0n-sbeK8tpVx9rfPcj1JPzbLWpf2zNr0iZX3J18hpfc2GdSpMpdM8bY0XXxroVxAsSErdadCLSYFSedcJ5tUU-cn2_9w-cLJNKMhSUGXXsyJPCbLWn9vDUhJ-7"
-                alt="Luxury elevator interior"
-                className="w-full h-full object-cover opacity-80"
-              />
-
-              <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-black/80 border border-primary/40 px-4 py-1 rounded">
-                <span className="font-manrope font-bold text-primary text-xl tracking-tighter">PH</span>
-              </div>
-
-            </div>
-
-          </div>
+         
 
         </div>
 
