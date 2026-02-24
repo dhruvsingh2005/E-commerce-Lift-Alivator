@@ -38,15 +38,15 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col space-y-[-1rem] pb-30">
-              <span className="text-6xl md:text-7xl lg:text-[5.5rem] font-extralight tracking-tight leading-tight text-white">
+              <span className="text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight leading-tight text-white">
                 The Art of
               </span>
 
-              <span className="text-7xl md:text-8xl lg:text-[7.5rem] font-serif italic text-primary py-2 ml-8 lg:ml-20 -my-4 relative z-10">
+              <span className="text-5xl md:text-6xl lg:text-[4.25rem] font-serif italic text-primary py-2 ml-8 lg:ml-20 -my-4 relative z-10">
                 Vertical
               </span>
 
-              <span className="text-6xl md:text-7xl lg:text-[5.5rem] font-extralight tracking-tight self-end lg:mr-12 text-white">
+              <span className="text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight text-white ml-[8rem] md:ml-[10rem] lg:ml-[13rem]">
                 Mastery.
               </span>
             </div>
