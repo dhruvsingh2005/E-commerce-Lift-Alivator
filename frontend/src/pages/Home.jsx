@@ -31,7 +31,7 @@ const Home = () => {
         {/* FIXED HERE: added pt-28 lg:pt-32 */}
         <div className="flex-1 flex flex-col lg:flex-row px-8 lg:px-16 pt-28 lg:pt-32 items-center relative z-10">
 
-          <div className="w-full lg:w-[55%] flex flex-col gap-8">
+          <div className="w-full lg:w-[55%] flex flex-col gap-5">
             <div className="inline-flex items-center gap-2 border border-primary/40 rounded-full px-4 py-1 w-fit">
               <span className="text-primary text-[10px]">●</span>
               <span className="text-[11px] uppercase tracking-widest text-primary/80">Est. 2018 · Indore, India</span>
@@ -65,7 +65,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-8 pt-12 border-t border-white/10 mt-8">
+            <div className="flex items-center gap-8 pt-6 border-t border-white/10 mt-4">
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">200+</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/40">Projects</span>
