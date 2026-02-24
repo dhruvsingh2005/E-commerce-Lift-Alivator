@@ -33,12 +33,12 @@ const Portfolio = () => {
                 <div className="absolute -left-12 lg:left-0 top-12 select-none pointer-events-none">
                     <span className="section-marker opacity-10 font-serif text-[12rem] text-primary">04</span>
                 </div>
-                <div className="relative z-10 w-full lg:pl-48">
+                <div className="relative z-10 w-full max-w-3xl mx-auto text-center">
                     <h1 className="serif-title text-6xl md:text-8xl text-white font-medium mb-8">Our Work</h1>
-                    <div className="gold-hairline mt-4"></div>
+                    <div className="gold-hairline mt-4 mx-auto"></div>
                 </div>
-                <div className="lg:pl-48 mt-8">
-                    <p className="text-white/50 max-w-xl text-lg font-light leading-relaxed font-manrope">
+                <div className="max-w-2xl mx-auto mt-8 text-center">
+                    <p className="text-white/50 text-lg font-light leading-relaxed font-manrope">
                         Setting the standard in vertical mobility with bespoke architectural solutions. Discover our prestigious installations across India's premier commercial and residential developments.
                     </p>
                 </div>
