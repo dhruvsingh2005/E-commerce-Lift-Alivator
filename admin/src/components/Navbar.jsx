@@ -5,13 +5,13 @@ import { assets } from "../assets/assets";
 
 const Navbar = ({ setToken }) => {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-obsidian border-b border-white/5 px-6 lg:px-12 py-1">
+    <nav className="sticky top-0 z-50 w-full bg-obsidian border-b border-white/5 px-6 lg:px-12 py-4">
       <div className="flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <img src={assets.logo1} alt="Winsume Lift Logo" className="h-24 w-auto transition-transform group-hover:scale-105" />
+        <Link to="/" className="flex items-center gap-4 group">
+          <img src={assets.logo} alt="Winsume Lift Logo" className="h-28 w-auto transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
-            <span className="serif-title text-2xl font-semibold tracking-widest uppercase text-white leading-none">Winsume Lift India</span>
-            <span className="text-xs uppercase tracking-[0.2em] text-primary font-semibold">Private Limited</span>
+            <span className="serif-title text-3xl font-semibold tracking-widest uppercase text-white leading-none">Winsume Lift India</span>
+            <span className="text-sm uppercase tracking-[0.2em] text-primary font-semibold">Private Limited</span>
           </div>
         </Link>
         

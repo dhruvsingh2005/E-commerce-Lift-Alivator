@@ -6,7 +6,6 @@ import parcel_icon from "./parcel_icon.png";
 
 export const assets = {
   logo,
-  logo1: logo, // Use logo1 in navbar; add logo1.png and import to use a different image
   add_icon,
   order_icon,
   upload_area,
