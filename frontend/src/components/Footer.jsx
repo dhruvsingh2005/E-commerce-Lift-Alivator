@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-obsidian py-20 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-        <div className="max-w-xs">
+        <div className="max-w-sm">
           <div className="flex items-center gap-4 mb-8">
             <img src={assets.logo} alt="Winsume Lift Logo" className="h-28 w-auto object-contain" />
             <div className="flex flex-col">
@@ -16,8 +16,8 @@ const Footer = () => {
               <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
             </div>
           </div>
-          <p className="text-[15px] text-white/50 text-xs leading-relaxed mb-8">
-            Headquartered in Indore, India. Serving the world's most prestigious architectural projects with bespoke vertical transport solutions.
+          <p className="text-xs text-white/50 leading-snug mb-8 max-w-[22rem]">
+            Winsume Lift India Private Limited - Service Provider And Manufacturer Of Installation Service, Passenger Lifts & Maintenance Service Since 2018 In Indore, Madhya Pradesh.
           </p>
           <div className="flex gap-4 mb-8">
             <a className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50" href="#">
