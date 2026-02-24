@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const ProductItem = ({ id, image, name, price, category, features }) => {
   const { currency } = useContext(ShopContext);
+  const imageUrl = Array.isArray(image) && image.length > 0 ? image[0] : "";
 
   return (
     <Link to={`/product/${id}`} className="group relative flex flex-col h-full bg-obsidian border border-white/10 hover:border-primary/50 transition-all duration-500 overflow-hidden">
@@ -12,8 +13,8 @@ const ProductItem = ({ id, image, name, price, category, features }) => {
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 z-10 transition-colors"></div>
         <img
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-          src={image[0]}
-          alt={name}
+          src={imageUrl}
+          alt={name || "Product"}
         />
         <div className="absolute top-4 left-4 z-20">
           <span className="bg-primary/95 text-black text-[9px] font-black px-3 py-1 uppercase tracking-widest rounded-sm">
@@ -47,7 +48,7 @@ const ProductItem = ({ id, image, name, price, category, features }) => {
         <div className="mt-auto pt-4 border-t border-white/5 flex flex-col">
           <p className="pt-4 pb-1 text-xs text-white/40 uppercase tracking-widest font-manrope">{name}</p>
           <div className="flex justify-between items-center pr-2">
-            <p className="text-sm font-black text-primary font-manrope">{currency}{price.toLocaleString()}</p>
+            <p className="text-sm font-black text-primary font-manrope">{currency}{(price != null ? price : 0).toLocaleString()}</p>
           </div>
         </div>
       </div>

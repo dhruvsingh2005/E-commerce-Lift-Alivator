@@ -10,6 +10,8 @@ const ShopContextProvider = (props) => {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [products, setProducts] = useState([]);
+  const [productsLoading, setProductsLoading] = useState(true);
+  const [productsError, setProductsError] = useState(null);
   const [projects, setProjects] = useState([]);
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
@@ -19,16 +21,23 @@ const ShopContextProvider = (props) => {
   const delivery_fee = 5000;
 
   const getProductsData = async () => {
+    setProductsLoading(true);
+    setProductsError(null);
     try {
       const response = await axios.get(backendUrl + "/api/product/list");
       if (response.data.success) {
-        setProducts(response.data.products);
+        setProducts(response.data.products || []);
       } else {
-        toast.error(response.data.message);
+        setProductsError(response.data.message || "Failed to load products");
+        setProducts([]);
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      setProductsError(error.response?.data?.message || error.message || "Could not connect to server. Is the backend running?");
+      setProducts([]);
+      toast.error("Could not load products. Check backend and VITE_BACKEND_URL.");
+    } finally {
+      setProductsLoading(false);
     }
   };
 
@@ -134,6 +143,9 @@ const ShopContextProvider = (props) => {
 
   const value = {
     products,
+    productsLoading,
+    productsError,
+    getProductsData,
     projects,
     currency,
     delivery_fee,
