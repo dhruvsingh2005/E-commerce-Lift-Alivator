@@ -36,7 +36,7 @@ const Login = ({ setToken }) => {
     <div className="flex items-center justify-center text-black w-full min-h-screen">
       <div className="max-w-md px-8 py-6 bg-gray-100 rounded-lg shadow-md">
         <div className="mb-6 w-full flex justify-center">
-          <img src={assets.logo} alt="Winsume Logo" className="h-24 w-auto object-contain" />
+          <img src={assets.logo2} alt="Winsume Logo" className="h-24 w-auto object-contain" />
         </div>
         <h1 className="mb-4 text-2xl font-bold">Admin Dashboard</h1>
         <form onSubmit={onSubmitHandler}>
