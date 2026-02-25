@@ -25,7 +25,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Us</p>
-                  <p className="text-white font-medium">+91 98765 43210</p>
+                  <a href="tel:+919876543210" className="text-white font-medium hover:text-primary transition-colors block">+91 98765 43210</a>
+                  <a href="tel:+918922945148" className="text-white font-medium hover:text-primary transition-colors block mt-1">+91 89229 45148</a>
                 </div>
               </div>
 
