@@ -65,7 +65,7 @@ const NavBar = () => {
                         </Link>
                     )}
                     
-                    <Link to="/contact" className="hidden sm:block bg-primary text-obsidian px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
+                    <Link to="/contact#inquiry" className="hidden sm:block bg-primary text-obsidian px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
                         Inquire
                     </Link>
                     <button onClick={() => setVisible(!visible)} className="md:hidden text-white">
@@ -89,7 +89,7 @@ const NavBar = () => {
                             <p onClick={logout} className="hover:text-primary cursor-pointer">Logout</p>
                         </>
                     )}
-                    <Link onClick={() => setVisible(false)} to="/contact" className="bg-primary text-obsidian px-10 py-4 rounded-sm">
+                    <Link onClick={() => setVisible(false)} to="/contact#inquiry" className="bg-primary text-obsidian px-10 py-4 rounded-sm">
                         Get a Quote
                     </Link>
                 </div>
