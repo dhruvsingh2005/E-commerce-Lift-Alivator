@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import ContactSection from '../components/ContactSection'
 
 const Contact = () => {
+  const location = useLocation()
+  const inquiryRef = useRef(null)
+
+  useEffect(() => {
+    if (location.hash === '#inquiry' && inquiryRef.current) {
+      inquiryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [location])
+
   return (
     <div className='pt-24 min-h-screen bg-background-dark'>
       <header className="relative bg-background-dark border-b border-white/10 px-6 lg:px-20 py-24 text-center overflow-hidden">
@@ -15,7 +25,7 @@ const Contact = () => {
         </div>
       </header>
       
-      <main className="py-12">
+      <main className="py-12" id="inquiry" ref={inquiryRef}>
         <ContactSection />
       </main>
     </div>

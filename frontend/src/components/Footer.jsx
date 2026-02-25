@@ -5,7 +5,6 @@ import { assets } from '../assets/assets'
 
 const Footer = () => {
 
-  const emailAddress = 'concierge@winsumelift.com'
   // Open Google Maps in directions mode with your coordinates as destination
   const mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=22.72718,75.92261'
 
@@ -52,12 +51,12 @@ const Footer = () => {
             >
               <Share2 size={18} />
             </button>
-            <a
+            <Link
+              to="/contact#inquiry"
               className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
-              href={`mailto:${emailAddress}`}
             >
               <Mail size={18} />
-            </a>
+            </Link>
           </div>
           <a
             href={mapsUrl}
