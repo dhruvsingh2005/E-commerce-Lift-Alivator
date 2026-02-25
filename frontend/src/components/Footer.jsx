@@ -6,8 +6,8 @@ import { assets } from '../assets/assets'
 const Footer = () => {
 
   const emailAddress = 'concierge@winsumelift.com'
-  const locationQuery = '1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi, Indore, Madhya Pradesh 452016'
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`
+  // Open Google Maps in directions mode with your coordinates as destination
+  const mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=22.72718,75.92261'
 
   const handleShare = (e) => {
     e.preventDefault()
@@ -54,7 +54,7 @@ const Footer = () => {
             </button>
             <a
               className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
-              href={`mailto:${emailAddress}?subject=${encodeURIComponent('Winsume Lift Inquiry')}`}
+              href={`mailto:${emailAddress}`}
             >
               <Mail size={18} />
             </a>
@@ -67,7 +67,8 @@ const Footer = () => {
           >
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mb-2 group-hover:text-white transition-colors">Location</p>
             <p className="text-[15px] text-white/50 hover:text-primary transition-colors">
-              1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi, Indore - 452016
+              Winsume Lift India Private Limited<br />
+              1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi, Indore - 452016, Madhya Pradesh, India
             </p>
           </a>
         </div>
