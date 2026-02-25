@@ -5,8 +5,8 @@ import { assets } from '../assets/assets'
 
 const Footer = () => {
 
-  // Open Google Maps in directions mode with your coordinates as destination
-  const mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=22.72718,75.92261'
+  // Open Google Maps with a single red pin at your coordinates (no directions panel)
+  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=22.72718,75.92261'
 
   const handleShare = (e) => {
     e.preventDefault()

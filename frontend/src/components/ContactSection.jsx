@@ -46,7 +46,14 @@ const ContactSection = () => {
 
                 <div className="w-full">
                   <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Visit Studio</p>
-                  <p className="text-white font-medium">Winsume Tower, Landmark Area, Indore, M.P.</p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=22.72718,75.92261"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-medium hover:text-primary transition-colors"
+                  >
+                    Winsume Tower, Landmark Area, Indore, M.P.
+                  </a>
 
                   <div className="mt-10 flex justify-center">
                     <a
