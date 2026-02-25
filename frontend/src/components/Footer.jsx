@@ -5,6 +5,31 @@ import { assets } from '../assets/assets'
 
 const Footer = () => {
 
+  const emailAddress = 'concierge@winsumelift.com'
+  const locationQuery = '1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi, Indore, Madhya Pradesh 452016'
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`
+
+  const handleShare = (e) => {
+    e.preventDefault()
+
+    const shareData = {
+      title: 'Winsume Lift India',
+      text: 'Premium elevator and vertical mobility solutions by Winsume Lift India.',
+      url: window.location.origin
+    }
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {
+        // ignore if user closes share dialog
+      })
+    } else {
+      const whatsappUrl = `https://wa.me/917942829113?text=${encodeURIComponent(
+        `${shareData.text} ${shareData.url}`
+      )}`
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
     <footer className="bg-obsidian py-20 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
@@ -20,15 +45,22 @@ const Footer = () => {
             Winsume Lift India Private Limited - Service Provider And Manufacturer Of Installation Service, Passenger Lifts & Maintenance Service Since 2018 In Indore, Madhya Pradesh.
           </p>
           <div className="flex gap-4 mb-8">
-            <a className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50" href="#">
+            <button
+              type="button"
+              onClick={handleShare}
+              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
+            >
               <Share2 size={18} />
-            </a>
-            <a className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50" href="mailto:info@winsumelift.in">
+            </button>
+            <a
+              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
+              href={`mailto:${emailAddress}?subject=${encodeURIComponent('Winsume Lift Inquiry')}`}
+            >
               <Mail size={18} />
             </a>
           </div>
           <a
-            href="https://www.google.com/maps/place/1,+Nirmal+Nagar,+Pipliyahana,+Bhicholi+Hapsi,+Indore,+Madhya+Pradesh+452016"
+            href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-block"
