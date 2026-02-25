@@ -48,9 +48,9 @@ const Portfolio = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Featured Project */}
                     <div className="lg:col-span-2 group relative aspect-[16/10] overflow-hidden border-t border-primary/50">
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-700 z-10"></div>
+                        <div className="absolute inset-0 bg-background-dark/40 group-hover:bg-background-dark/20 transition-all duration-700 z-10"></div>
                         <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-20"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80 z-20"></div>
                         <div className="absolute bottom-0 left-0 w-full p-8 z-40">
                             <p className="text-primary font-manrope text-[10px] tracking-[0.4em] uppercase mb-2">{projects[0].location}</p>
                             <h3 className="serif-title text-4xl md:text-5xl text-white mb-2">{projects[0].title}</h3>
@@ -62,9 +62,9 @@ const Portfolio = () => {
                     <div className="flex flex-col gap-8">
                         {projects.slice(1).map((project, index) => (
                             <div key={index} className="group relative aspect-square overflow-hidden border-t border-primary/50">
-                                <div className="absolute inset-0 bg-black/40 z-10 transition-all duration-700"></div>
+                                <div className="absolute inset-0 bg-background-dark/40 z-10 transition-all duration-700"></div>
                                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-20"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-20"></div>
                                 <div className="absolute bottom-0 left-0 w-full p-6 z-40">
                                     <p className="text-primary font-manrope text-[9px] tracking-[0.4em] uppercase mb-1">{project.location}</p>
                                     <h3 className="serif-title text-2xl text-white">{project.title}</h3>

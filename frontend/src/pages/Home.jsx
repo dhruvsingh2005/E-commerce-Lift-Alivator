@@ -94,14 +94,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE stays SAME */}
+        
          
 
         </div>
 
       </section>
 
-      {/* REST OF YOUR CODE REMAINS EXACT SAME */}
+    
 
       <ContactSection />
 
