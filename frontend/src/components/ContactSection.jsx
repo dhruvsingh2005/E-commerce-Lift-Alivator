@@ -25,7 +25,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Us</p>
-                  <a href="tel:+919876543210" className="text-white font-medium hover:text-primary transition-colors block">+91 98765 43210</a>
+                  <a href="tel:+917942829113" className="text-white font-medium hover:text-primary transition-colors block">+91 79428 29113</a>
                 </div>
               </div>
 
@@ -50,7 +50,7 @@ const ContactSection = () => {
 
                   <div className="mt-10 flex justify-center">
                     <a
-                      href="https://wa.me/9876543210"
+                      href="https://wa.me/917942829113"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-primary hover:bg-primary/80 text-background-dark font-semibold px-10 py-4 rounded-full transition duration-300 text-lg"

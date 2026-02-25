@@ -112,7 +112,7 @@ const QuoteBuilder = () => {
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Phone Number</label>
-                                        <input required name="phone" onChange={handleInputChange} value={formData.phone} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="tel" placeholder="+91 98765 43210" />
+                                        <input required name="phone" onChange={handleInputChange} value={formData.phone} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="tel" placeholder="+91 79428 29113" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">City / Location</label>
