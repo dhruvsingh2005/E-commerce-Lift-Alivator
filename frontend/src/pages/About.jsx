@@ -53,10 +53,10 @@ const About = () => {
             </section>
 
             {/* Company & Compliance */}
-            <section className="py-32 bg-white/5 relative border-y border-primary/10">
+            <section className="py-32 bg-gray-100 relative border-y border-primary/10">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="relative mb-16">
-                        <h2 className="serif-title text-4xl md:text-5xl mb-6 relative z-10 text-white">Company & <br /><span className="italic text-primary">Compliance</span></h2>
+                        <h2 className="serif-title text-4xl md:text-5xl mb-6 relative z-10 text-gray-900">Company & <br /><span className="italic text-primary">Compliance</span></h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 relative z-10">
                         {[
@@ -68,13 +68,13 @@ const About = () => {
                             { icon: FileCheck, label: "GST No.", value: "23AACCW7463L1ZY" },
                             { icon: FileCheck, label: "CIN No.", value: "U31909MP2020PTC052784" },
                         ].map((item, index) => (
-                            <div key={index} className="flex gap-4 p-6 rounded-sm border border-primary/20 bg-obsidian/50 hover:border-primary/40 transition-colors">
+                            <div key={index} className="flex gap-4 p-6 rounded-sm border border-primary/20 bg-white/80 hover:border-primary/40 transition-colors">
                                 <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-sm border border-primary/50 bg-primary/5">
                                     <item.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
                                 </div>
                                 <div className="min-w-0">
-                                    <p className="text-white/50 text-xs uppercase tracking-wider font-medium mb-1">{item.label}</p>
-                                    <p className="text-white font-semibold serif-title">{item.value}</p>
+                                    <p className="text-gray-500 text-xs uppercase tracking-wider font-medium mb-1">{item.label}</p>
+                                    <p className="text-gray-900 font-semibold serif-title">{item.value}</p>
                                 </div>
                             </div>
                         ))}

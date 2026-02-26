@@ -39,7 +39,7 @@ const Product = () => {
                 <div 
                   key={index} 
                   onClick={() => setImage(item)}
-                  className={`aspect-square cursor-pointer border rounded-sm overflow-hidden transition-all ${image === item ? 'border-primary' : 'border-white/10'}`}
+                  className={`aspect-square cursor-pointer border rounded-sm overflow-hidden transition-all ${image === item ? 'border-primary' : 'border-gray-200'}`}
                 >
                   <img src={item} className="w-full h-full object-cover" alt="" />
                 </div>

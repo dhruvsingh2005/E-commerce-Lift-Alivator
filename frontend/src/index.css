@@ -29,14 +29,15 @@
 
   .section-number {
     font-family: 'Cormorant Garamond', serif;
-    color: rgba(201, 167, 74, 0.1);
+    color: rgba(201, 167, 74, 0.2);
     line-height: 0.8;
   }
 
   .glass-card {
-    background: rgba(10, 10, 10, 0.7);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 30px rgba(201, 167, 74, 0.15);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* Custom Animations to replace tailwindcss-animate dependencies */

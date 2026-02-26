@@ -39,13 +39,13 @@ const NavBar = () => {
                     {token ? (
                         <>
                             <div className='group relative'>
-                                <Link to="/orders" className="text-white/60 hover:text-primary transition-colors">
-                                    <User size={24} />
+<Link to="/orders" className="text-white/60 hover:text-primary transition-colors">
+                                <User size={24} />
                                 </Link>
                                 <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-background-dark border border-white/10 text-white/60 rounded text-[10px] uppercase tracking-widest font-bold'>
+                                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-obsidian border border-white/10 text-white rounded text-[10px] uppercase tracking-widest font-bold shadow-lg'>
                                         <Link to='/orders' className='hover:text-primary transition-colors'>Projects</Link>
-                                        <hr className="border-white/5" />
+                                        <hr className="border-white/10" />
                                         <p onClick={logout} className='hover:text-primary transition-colors cursor-pointer flex items-center gap-2'>Logout <LogOut size={12}/></p>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@ const NavBar = () => {
                             <Link to="/cart" className="relative text-white/60 hover:text-primary transition-colors">
                                 <ShoppingBag size={20} />
                                 {getCartCount() > 0 && (
-                                    <span className="absolute -top-1 -right-1 bg-primary text-obsidian text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                                    <span className="absolute -top-1 -right-1 bg-primary text-black text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                                         {getCartCount()}
                                     </span>
                                 )}
@@ -65,7 +65,7 @@ const NavBar = () => {
                         </Link>
                     )}
                     
-                    <Link to="/contact#inquiry" className="hidden sm:block bg-primary text-obsidian px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
+                    <Link to="/contact#inquiry" className="hidden sm:block bg-primary text-black px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
                         Inquire
                     </Link>
                     <button onClick={() => setVisible(!visible)} className="md:hidden text-white">
@@ -89,7 +89,7 @@ const NavBar = () => {
                             <p onClick={logout} className="hover:text-primary cursor-pointer">Logout</p>
                         </>
                     )}
-                    <Link onClick={() => setVisible(false)} to="/contact#inquiry" className="bg-primary text-obsidian px-10 py-4 rounded-sm">
+                    <Link onClick={() => setVisible(false)} to="/contact#inquiry" className="bg-primary text-black px-10 py-4 rounded-sm">
                         Get a Quote
                     </Link>
                 </div>

@@ -68,7 +68,7 @@ const Collection = () => {
   }, [openDropdown]);
 
   return (
-    <div className="bg-background-light dark:bg-background-dark min-h-screen pt-24">
+    <div className="bg-background-dark min-h-screen pt-24">
       {/* Header */}
       <header className="relative bg-background-dark border-b border-white/10 px-6 lg:px-20 pt-12 pb-20 text-center overflow-visible">
         <div className="absolute inset-0 flex items-center justify-center opacity-10 select-none pointer-events-none">
@@ -98,7 +98,7 @@ const Collection = () => {
             <div className="relative z-40" ref={dropdownRef}>
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'price' ? null : 'price')}
-                className="flex items-center gap-1.5 px-2 py-1.5 text-xs bg-black text-white border border-gray-600 rounded"
+                className="flex items-center gap-1.5 px-2 py-1.5 text-xs bg-white/10 text-white border border-white/20 rounded"
               >
                 <span>Price</span>
                 <ChevronDown

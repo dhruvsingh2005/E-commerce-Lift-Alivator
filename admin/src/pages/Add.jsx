@@ -58,6 +58,8 @@ const Add = ({ token }) => {
       if (response.data.success) {
         toast.success("New Architecture Added to Registry");
         resetForm();
+        // Also clear uncontrolled fields (Technical Section inputs/selects)
+        e.target.reset();
       } else {
         toast.error(response.data.message);
       }

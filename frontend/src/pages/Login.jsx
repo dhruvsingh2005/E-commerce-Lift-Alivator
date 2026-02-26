@@ -67,7 +67,7 @@ const Login = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type="text"
-                className="w-full bg-white/5 border border-white/10 p-4 pl-12 outline-none focus:border-primary text-white text-sm transition-colors rounded-sm font-manrope"
+                className="w-full bg-gray-100 border border-gray-200 p-4 pl-12 outline-none focus:border-primary text-gray-900 text-sm transition-colors rounded-sm font-manrope"
                 placeholder="Full Name"
                 required
               />

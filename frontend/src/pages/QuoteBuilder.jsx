@@ -73,10 +73,10 @@ const QuoteBuilder = () => {
                     </div>
 
                     {/* Right: Form */}
-                    <div className="flex-1 glass-card border border-white/10 p-12 rounded-sm">
+                    <div className="flex-1 glass-card border border-gray-200 p-12 rounded-sm">
                         {step === 1 && (
                             <div className="space-y-8 animate-in fade-in transition-all duration-700">
-                                <h3 className="serif-title text-3xl text-white border-b border-primary/20 pb-6">Select Application</h3>
+                                <h3 className="serif-title text-3xl text-gray-900 border-b border-primary/20 pb-6">Select Application</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {elevatorOptions.map((opt) => (
                                         <div 
@@ -85,10 +85,10 @@ const QuoteBuilder = () => {
                                                 setFormData({ ...formData, elevatorType: opt.id });
                                                 setStep(2);
                                             }}
-                                            className={`p-6 border transition-all cursor-pointer group ${formData.elevatorType === opt.id ? 'border-primary bg-primary/5' : 'border-white/10 hover:border-primary/50'}`}
+                                            className={`p-6 border transition-all cursor-pointer group ${formData.elevatorType === opt.id ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/50'}`}
                                         >
-                                            <h4 className="text-white text-sm uppercase tracking-widest font-bold mb-2 group-hover:text-primary transition-colors">{opt.title}</h4>
-                                            <p className="text-white/40 text-[10px] uppercase tracking-wide leading-relaxed">{opt.desc}</p>
+                                            <h4 className="text-gray-900 text-sm uppercase tracking-widest font-bold mb-2 group-hover:text-primary transition-colors">{opt.title}</h4>
+                                            <p className="text-gray-500 text-[10px] uppercase tracking-wide leading-relaxed">{opt.desc}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -98,32 +98,32 @@ const QuoteBuilder = () => {
                         {step === 2 && (
                             <form onSubmit={handleSubmit} className="space-y-8 animate-in slide-in-from-right-4 duration-700">
                                 <div className="flex items-center justify-between border-b border-primary/20 pb-6">
-                                    <h3 className="serif-title text-3xl text-white">Project Details</h3>
+                                    <h3 className="serif-title text-3xl text-gray-900">Project Details</h3>
                                     <button onClick={() => setStep(1)} type="button" className="text-[10px] uppercase tracking-widest text-primary font-bold">Back</button>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Full Name</label>
-                                        <input required name="name" onChange={handleInputChange} value={formData.name} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="text" placeholder="John Doe" />
+                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Full Name</label>
+                                        <input required name="name" onChange={handleInputChange} value={formData.name} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="text" placeholder="John Doe" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Email Address</label>
-                                        <input required name="email" onChange={handleInputChange} value={formData.email} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="email" placeholder="john@example.com" />
+                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Email Address</label>
+                                        <input required name="email" onChange={handleInputChange} value={formData.email} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="email" placeholder="john@example.com" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Phone Number</label>
-                                        <input required name="phone" onChange={handleInputChange} value={formData.phone} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="tel" placeholder="+91 79428 29113" />
+                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Phone Number</label>
+                                        <input required name="phone" onChange={handleInputChange} value={formData.phone} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="tel" placeholder="+91 79428 29113" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">City / Location</label>
-                                        <input name="city" onChange={handleInputChange} value={formData.city} className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors" type="text" placeholder="Indore" />
+                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">City / Location</label>
+                                        <input name="city" onChange={handleInputChange} value={formData.city} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="text" placeholder="Indore" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Message / Requirements</label>
-                                    <textarea name="message" onChange={handleInputChange} value={formData.message} rows="4" className="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-primary text-white text-sm transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+                                    <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Message / Requirements</label>
+                                    <textarea name="message" onChange={handleInputChange} value={formData.message} rows="4" className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
                                 </div>
-                                <button type="submit" className="w-full bg-primary text-black py-5 font-black uppercase tracking-[0.3em] text-xs hover:bg-white transition-all shadow-xl shimmer-effect">
+                                <button type="submit" className="w-full bg-primary text-gray-900 py-5 font-black uppercase tracking-[0.3em] text-xs hover:bg-primary/90 transition-all shadow-xl shimmer-effect">
                                     Request Consultation
                                 </button>
                             </form>

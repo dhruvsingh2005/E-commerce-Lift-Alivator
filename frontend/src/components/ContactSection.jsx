@@ -60,7 +60,7 @@ const ContactSection = () => {
                       href="https://wa.me/917942829113"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-primary hover:bg-primary/80 text-background-dark font-semibold px-10 py-4 rounded-full transition duration-300 text-lg"
+                      className="inline-flex items-center gap-3 bg-primary hover:bg-primary/80 text-black font-semibold px-10 py-4 rounded-full transition duration-300 text-lg"
                     >
                      <FaWhatsapp size={26} />
 
@@ -75,21 +75,21 @@ const ContactSection = () => {
 
 
           <div className="flex-1">
-            <div className="glass-card border border-white/10 p-8 md:p-12 rounded-sm">
+            <div className="bg-[#141414] border border-white/10 p-8 md:p-12 rounded-sm">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold ml-1">Full Name</label>
-                    <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:border-primary transition-all outline-none" />
+                    <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-1">Full Name</label>
+                    <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/50 focus:border-primary transition-all outline-none" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold ml-1">Email Address</label>
-                    <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:border-primary transition-all outline-none" />
+                    <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-1">Email Address</label>
+                    <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/50 focus:border-primary transition-all outline-none" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold ml-1">Project Type</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white/60 focus:border-primary transition-all outline-none appearance-none">
+                  <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-1">Project Type</label>
+                  <select className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:border-primary transition-all outline-none appearance-none">
                     <option>Residential Villa</option>
                     <option>Commercial Complex</option>
                     <option>Industrial Lift</option>
@@ -97,8 +97,8 @@ const ContactSection = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold ml-1">Your Message</label>
-                  <textarea rows="4" placeholder="How can we help you?" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:border-primary transition-all outline-none resize-none"></textarea>
+                  <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-1">Your Message</label>
+                  <textarea rows="4" placeholder="How can we help you?" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/50 focus:border-primary transition-all outline-none resize-none"></textarea>
                 </div>
                 <button type="submit" className="w-full bg-primary text-black py-4 font-bold text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-white transition-all shimmer-effect">
                   SEND INQUIRY <Send size={14} />

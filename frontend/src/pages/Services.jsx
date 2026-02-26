@@ -23,7 +23,7 @@ const Services = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQU03jVKIdvzxmltJ-yT0RIiyp23IOSutrsgW3kOeoXtByRj2_gx_wzuamxR4MI1Wx8AHJRXWH8l8oeKIHuGvKwEauvs2ZPXIJUX3bgQ9VPXAWZzfbMYbUsQpH9nJen2YAIuHSVe8VNnkwhfP7HqF-4ioyW2cZOCHSwyezSOMWwFiYHA2XjphcAtosp0Ouxxfkd-PMLuIr5BqhKQ03DYs26rVAQ1MopF8KBaz1zrKrwZSQM6mEdrRyb80I6hmmh01tAJAmSEEOKDux" alt="Engineer" className="w-full h-full object-cover grayscale brightness-75 transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute bottom-10 left-10 z-20 max-w-md">
-                        <p className="text-white/60 text-sm leading-relaxed border-l border-primary pl-4 uppercase tracking-widest">
+                        <p className="text-gray-600 text-sm leading-relaxed border-l border-primary pl-4 uppercase tracking-widest">
                             Precision engineering meets <br /> uncompromising dedication.
                         </p>
                     </div>

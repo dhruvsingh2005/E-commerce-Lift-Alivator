@@ -48,31 +48,31 @@ const Cart = () => {
               if (!product) return null;
 
               return (
-                <div key={index} className="glass-card border border-white/10 p-6 rounded-sm flex gap-6 items-center group">
-                  <div className="w-24 aspect-square rounded-sm overflow-hidden bg-neutral-900 border border-white/5">
+                <div key={index} className="glass-card border border-gray-200 p-6 rounded-sm flex gap-6 items-center group">
+                  <div className="w-24 aspect-square rounded-sm overflow-hidden bg-neutral-100 border border-gray-200">
                     <img src={product.image[0]} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={product.name} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="serif-title text-xl text-white mb-1">{product.name}</h3>
-                    <p className="text-white/40 text-[10px] uppercase tracking-widest mb-3">Category: {product.category}</p>
+                    <h3 className="serif-title text-xl text-gray-900 mb-1">{product.name}</h3>
+                    <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-3">Category: {product.category}</p>
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center border border-white/10 rounded-sm">
-                        <button onClick={() => updateQuantity(item._id, item.quantity - 1)} className="p-2 text-white/40 hover:text-white transition-colors">
+                      <div className="flex items-center border border-gray-200 rounded-sm">
+                        <button onClick={() => updateQuantity(item._id, item.quantity - 1)} className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
                           <Minus size={14} />
                         </button>
-                        <span className="w-8 text-center text-xs text-white font-bold">{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item._id, item.quantity + 1)} className="p-2 text-white/40 hover:text-white transition-colors">
+                        <span className="w-8 text-center text-xs text-gray-900 font-bold">{item.quantity}</span>
+                        <button onClick={() => updateQuantity(item._id, item.quantity + 1)} className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
                           <Plus size={14} />
                         </button>
                       </div>
-                      <button onClick={() => updateQuantity(item._id, 0)} className="text-white/20 hover:text-red-500 transition-colors">
+                      <button onClick={() => updateQuantity(item._id, 0)} className="text-gray-400 hover:text-red-500 transition-colors">
                         <Trash2 size={18} />
                       </button>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="text-primary text-lg serif-title">{currency}{(product.price * item.quantity).toLocaleString()}</p>
-                    <p className="text-white/20 text-[9px] uppercase tracking-widest font-bold">Unit: {currency}{product.price.toLocaleString()}</p>
+                    <p className="text-gray-400 text-[9px] uppercase tracking-widest font-bold">Unit: {currency}{product.price.toLocaleString()}</p>
                   </div>
                 </div>
               )

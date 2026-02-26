@@ -22,7 +22,7 @@ const ProductItem = ({ id, image, name, price, category, features }) => {
           </span>
         </div>
         <div className="absolute bottom-4 left-4 right-4 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <div className="flex items-center justify-between text-white border-t border-white/20 pt-4">
+          <div className="flex items-center justify-between text-gray-900 border-t border-gray-300 pt-4">
             <span className="text-[10px] uppercase font-bold tracking-widest">View Details</span>
             <ArrowRight size={14} className="text-primary" />
           </div>

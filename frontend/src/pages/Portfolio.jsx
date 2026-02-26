@@ -38,7 +38,7 @@ const Portfolio = () => {
                     <div className="gold-hairline mt-4 mx-auto"></div>
                 </div>
                 <div className="max-w-2xl mx-auto mt-8 text-center">
-                    <p className="text-white/50 text-lg font-light leading-relaxed font-manrope">
+                    <p className="text-gray-500 text-lg font-light leading-relaxed font-manrope">
                         Setting the standard in vertical mobility with bespoke architectural solutions. Discover our prestigious installations across India's premier commercial and residential developments.
                     </p>
                 </div>

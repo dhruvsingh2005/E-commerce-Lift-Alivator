@@ -97,31 +97,31 @@ const PlaceOrder = () => {
 
                 {/* Right side: Method & Summary */}
                 <div className="w-full lg:w-[450px]">
-                    <div className="glass-card border border-white/10 p-10 rounded-sm">
+                    <div className="glass-card border border-gray-200 p-10 rounded-sm">
                         <section className="mb-12">
-                            <h4 className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-white/5 pb-4">Payment Commitment</h4>
+                            <h4 className="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-gray-200 pb-4">Payment Commitment</h4>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div onClick={() => setMethod('stripe')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'stripe' ? 'border-primary bg-primary/5' : 'border-white/10 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'stripe' ? 'bg-primary border-primary' : 'border-white/20'}`}></span>
+                                <div onClick={() => setMethod('stripe')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'stripe' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'stripe' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-white font-bold">Secure Card</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Secure Card</span>
                                         <div className="flex gap-2 items-center opacity-40">
                                             <CreditCard size={12} />
                                             <span className="text-[8px]">VISA/MASTER</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div onClick={() => setMethod('razorpay')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'razorpay' ? 'border-primary bg-primary/5' : 'border-white/10 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'razorpay' ? 'bg-primary border-primary' : 'border-white/20'}`}></span>
+                                <div onClick={() => setMethod('razorpay')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'razorpay' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'razorpay' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-white font-bold">Insta-Pay</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Insta-Pay</span>
                                         <span className="text-[8px] opacity-40">Upi / Netbank</span>
                                     </div>
                                 </div>
-                                <div onClick={() => setMethod('cod')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all sm:col-span-2 ${method === 'cod' ? 'border-primary bg-primary/5' : 'border-white/10 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'cod' ? 'bg-primary border-primary' : 'border-white/20'}`}></span>
+                                <div onClick={() => setMethod('cod')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all sm:col-span-2 ${method === 'cod' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'cod' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-white font-bold">Reserve Consultation</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Reserve Consultation</span>
                                         <span className="text-[8px] opacity-40 italic">Confirm with a minimal architectural reservation fee.</span>
                                     </div>
                                 </div>
@@ -129,28 +129,28 @@ const PlaceOrder = () => {
                         </section>
 
                         <section className="mb-10">
-                            <h4 className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-white/5 pb-4">Proposal Summary</h4>
+                            <h4 className="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-gray-200 pb-4">Proposal Summary</h4>
                             <div className="space-y-4">
                                 <div className="flex justify-between text-xs tracking-wider font-manrope">
-                                    <span className="text-white/60">Subtotal</span>
-                                    <span className="text-white font-medium">{currency}{getCartAmount().toLocaleString()}</span>
+                                    <span className="text-gray-600">Subtotal</span>
+                                    <span className="text-gray-900 font-medium">{currency}{getCartAmount().toLocaleString()}</span>
                                 </div>
                                 <div className="flex justify-between text-xs tracking-wider font-manrope">
-                                    <span className="text-white/60">Site Survey & Logistics</span>
-                                    <span className="text-white font-medium">{currency}{delivery_fee.toLocaleString()}</span>
+                                    <span className="text-gray-600">Site Survey & Logistics</span>
+                                    <span className="text-gray-900 font-medium">{currency}{delivery_fee.toLocaleString()}</span>
                                 </div>
-                                <div className="pt-4 border-t border-white/5 flex justify-between items-end">
+                                <div className="pt-4 border-t border-gray-200 flex justify-between items-end">
                                     <span className="text-primary text-[10px] uppercase tracking-widest font-black">Total Commitment</span>
                                     <span className="text-primary text-2xl serif-title">{currency}{(getCartAmount() + delivery_fee).toLocaleString()}</span>
                                 </div>
                             </div>
                         </section>
 
-                        <button type="submit" className="w-full bg-primary text-black py-5 rounded-sm font-black uppercase tracking-[0.4em] text-xs flex items-center justify-center gap-3 hover:bg-white transition-all shadow-2xl shimmer-effect">
+                        <button type="submit" className="w-full bg-primary text-gray-900 py-5 rounded-sm font-black uppercase tracking-[0.4em] text-xs flex items-center justify-center gap-3 hover:bg-primary/90 transition-all shadow-2xl shimmer-effect">
                             Confirm Selection <ArrowRight size={16} />
                         </button>
 
-                        <div className="mt-8 flex items-center justify-center gap-4 text-white/20">
+                        <div className="mt-8 flex items-center justify-center gap-4 text-gray-400">
                             <ShieldCheck size={20} />
                             <span className="text-[9px] uppercase tracking-[0.2em] font-medium leading-relaxed font-manrope">
                                 Secured by Winsume Platinum encryption. <br /> Your architectural data is classified.
