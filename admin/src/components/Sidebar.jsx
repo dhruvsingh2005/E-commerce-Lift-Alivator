@@ -6,7 +6,7 @@ const Sidebar = () => {
     <aside className="w-[20%] min-h-[calc(100vh-80px)] bg-obsidian border-r border-white/5 pt-12">
       <div className="flex flex-col gap-2">
         <div className="px-8 mb-4">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-white/70 font-black">Core Management</p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-white font-black">Core Management</p>
         </div>
 
         <NavLink
@@ -34,7 +34,7 @@ const Sidebar = () => {
         </NavLink>
 
         <div className="px-8 mt-8 mb-4">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-white/70 font-black">Engagement</p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-white font-black">Engagement</p>
         </div>
 
         <NavLink
