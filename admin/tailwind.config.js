@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         'primary': '#c9a74a',
-        'background-light': '#1f2933', // lighter dark for panels
-        'background-dark': '#111827',  // main admin background
-        'obsidian': '#111827',         // navbar / sidebar background
+        'background-light': '#1a1a1a',
+        'background-dark': '#0a0a0a',
+        'obsidian': '#050505',
       },
       fontFamily: {
         'manrope': ['Manrope', 'sans-serif'],

@@ -6,8 +6,7 @@
 
 @layer base {
   body {
-    /* Slightly lighter dark background so admin panel feels less heavy */
-    background-color: #111827; /* matches background-dark / obsidian */
+    background-color: #0a0a0a;
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Manrope', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -53,7 +52,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #111827;
+  background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
