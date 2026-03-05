@@ -78,13 +78,13 @@ const Collection = () => {
           <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Our Collection</p>
           <h2 className="serif-title text-5xl md:text-7xl font-light text-white mb-6">Elevators & Lifts</h2>
 
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-6 mt-2 relative z-30 py-1">
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 mt-2 relative z-30 py-2 px-4">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`pb-1 text-xs font-bold transition-all leading-tight ${
+                className={`pb-1 text-sm md:text-base font-bold transition-all leading-tight ${
                   category === cat
                     ? "text-white border-b-2 border-primary"
                     : "text-white/40 hover:text-white"
@@ -95,10 +95,10 @@ const Collection = () => {
             ))}
 
             {/* Price Filter Dropdown */}
-            <div className="relative z-40" ref={dropdownRef}>
+            <div className="relative z-40 mt-2 md:mt-0" ref={dropdownRef}>
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'price' ? null : 'price')}
-                className="flex items-center gap-1.5 px-2 py-1.5 text-xs bg-white/10 text-white border border-white/20 rounded"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm md:text-base bg-white/10 text-white border border-white/20 rounded"
               >
                 <span>Price</span>
                 <ChevronDown
