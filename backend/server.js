@@ -13,6 +13,15 @@ import cartRouter from "./routes/cartRoute.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
+
+app.use(cors({
+    origin: [
+      'http://localhost:5173',
+      'https://e-commerce-lift-alivator-eqkb.vercel.app'
+    ],
+    credentials: true,
+  }));
+
 // INFO: Connect to services
 const startServer = async () => {
     try {
