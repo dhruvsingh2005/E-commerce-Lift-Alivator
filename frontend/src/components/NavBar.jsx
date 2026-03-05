@@ -27,7 +27,7 @@ const NavBar = () => {
                     </div>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-10 text-[13px] uppercase tracking-[0.2em] font-medium text-white/60">
+                <div className="flex items-center gap-4 md:gap-10 text-[11px] md:text-[13px] uppercase tracking-[0.2em] font-medium text-white/60 overflow-x-auto whitespace-nowrap">
                     <NavLink to="/portfolio" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Portfolio</NavLink>
                     <NavLink to="/collection" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Collection</NavLink>
                     <NavLink to="/services" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Services</NavLink>
@@ -67,30 +67,6 @@ const NavBar = () => {
                     
                     <Link to="/contact#inquiry" className="hidden sm:block bg-primary text-black px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
                         Inquire
-                    </Link>
-                    <button onClick={() => setVisible(!visible)} className="md:hidden text-white">
-                        {visible ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            <div className={`fixed inset-0 z-40 bg-obsidian transition-transform duration-300 md:hidden ${visible ? 'translate-x-0' : 'translate-x-full'}`}>
-                <div className="flex flex-col items-center justify-center h-full gap-8 text-sm uppercase tracking-widest font-bold">
-                    <NavLink onClick={() => setVisible(false)} to="/" className="hover:text-primary">Home</NavLink>
-                    <NavLink onClick={() => setVisible(false)} to="/portfolio" className="hover:text-primary">Portfolio</NavLink>
-                    <NavLink onClick={() => setVisible(false)} to="/collection" className="hover:text-primary">Collection</NavLink>
-                    <NavLink onClick={() => setVisible(false)} to="/services" className="hover:text-primary">Services</NavLink>
-                    <NavLink onClick={() => setVisible(false)} to="/about" className="hover:text-primary">About</NavLink>
-                    <NavLink onClick={() => setVisible(false)} to="/contact" className="hover:text-primary">Contact</NavLink>
-                    {token && (
-                        <>
-                            <NavLink onClick={() => setVisible(false)} to="/orders" className="hover:text-primary">My Projects</NavLink>
-                            <p onClick={logout} className="hover:text-primary cursor-pointer">Logout</p>
-                        </>
-                    )}
-                    <Link onClick={() => setVisible(false)} to="/contact#inquiry" className="bg-primary text-black px-10 py-4 rounded-sm">
-                        Get a Quote
                     </Link>
                 </div>
             </div>
