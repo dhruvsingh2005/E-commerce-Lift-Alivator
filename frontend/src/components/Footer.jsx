@@ -40,24 +40,9 @@ const Footer = () => {
               <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
             </div>
           </div>
-          <p className="text-xs text-white/50 leading-snug mb-8 max-w-[22rem]">
+          <p className="text-sm text-white/50 leading-snug mb-8 max-w-[22rem]">
             Winsume Lift India Private Limited - Service Provider And Manufacturer Of Installation Service, Passenger Lifts & Maintenance Service Since 2018 In Indore, Madhya Pradesh.
           </p>
-          <div className="flex gap-4 mb-8">
-            <button
-              type="button"
-              onClick={handleShare}
-              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
-            >
-              <Share2 size={18} />
-            </button>
-            <Link
-              to="/contact#inquiry"
-              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white/50"
-            >
-              <Mail size={18} />
-            </Link>
-          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
