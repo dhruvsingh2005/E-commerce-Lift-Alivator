@@ -26,6 +26,28 @@ const Login = () => {
           toast.error(response.data.message);
         }
       } else {
+        // First, try admin login. If admin creds, open admin panel.
+        try {
+          const adminResponse = await axios.post(backendUrl + "/api/user/admin", { email, password });
+          if (adminResponse.data.success) {
+            // Optional: store admin token if you ever need it
+            localStorage.setItem("adminToken", adminResponse.data.token);
+            toast.success("Admin login successful");
+            const adminUrl = import.meta.env.VITE_ADMIN_URL || "http://localhost:5174";
+            window.location.href = adminUrl;
+            return;
+          }
+        } catch (adminError) {
+          // If admin login fails with 400 invalid email/password, silently fall back to user login
+          const status = adminError.response?.status;
+          if (status && status !== 400) {
+            const message = adminError.response?.data?.message || adminError.message;
+            toast.error(message);
+            return;
+          }
+        }
+
+        // Normal user login
         const response = await axios.post(backendUrl + "/api/user/login", { email, password });
         if (response.data.success) {
           setToken(response.data.token);
