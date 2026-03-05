@@ -84,7 +84,7 @@ const Collection = () => {
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`pb-1 text-sm md:text-base font-bold transition-all leading-tight ${
+                className={`pb-1 text-xs md:text-sm font-bold transition-all leading-tight ${
                   category === cat
                     ? "text-white border-b-2 border-primary"
                     : "text-white/40 hover:text-white"
