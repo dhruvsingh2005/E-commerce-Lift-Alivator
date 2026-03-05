@@ -75,6 +75,12 @@
   }
 }
 
+/* Make only the Project Type dropdown options light when opened */
+.project-type-select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

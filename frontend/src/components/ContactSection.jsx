@@ -89,7 +89,7 @@ const ContactSection = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-1">Project Type</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:border-primary transition-all outline-none appearance-none">
+                  <select className="project-type-select w-full bg-white/5 text-white border border-white/10 rounded-sm p-4 focus:border-primary transition-all outline-none appearance-none">
                     <option>Residential Villa</option>
                     <option>Commercial Complex</option>
                     <option>Industrial Lift</option>
