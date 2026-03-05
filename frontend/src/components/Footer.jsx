@@ -58,18 +58,6 @@ const Footer = () => {
               <Mail size={18} />
             </Link>
           </div>
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-block"
-          >
-            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mb-2 group-hover:text-white transition-colors">Location</p>
-            <p className="text-[15px] text-white/50 hover:text-primary transition-colors">
-              Winsume Lift India Private Limited<br />
-              1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi, Indore - 452016, Madhya Pradesh, India
-            </p>
-          </a>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
@@ -91,13 +79,20 @@ const Footer = () => {
               <li>Bangalore Sales</li>
             </ul>
           </div>
-          <div className="col-span-2 md:col-span-1">
-            <h6 className="text-[14px] uppercase tracking-[0.3em] font-bold text-primary mb-6">Newsletter</h6>
-            <p className="text-[15px] text-white/40 mb-4 leading-relaxed italic serif-title text-base">Subscribe for architectural insights.</p>
-            <div className="flex border-b border-primary/30 pb-2">
-              <input className="bg-transparent border-none text-[14px] focus:ring-0 w-full placeholder:text-white/20 text-white outline-none" placeholder="Email Address" type="email" />
-              <button className="text-primary text-[15px] uppercase tracking-widest font-bold">Join</button>
-            </div>
+          <div>
+            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-primary mb-6">Location</h6>
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-block"
+            >
+              <p className="text-[15px] text-white/50 hover:text-primary transition-colors">
+                Winsume Lift India Private Limited<br />
+                1, Nirmal Nagar, Pipliyahana, Bhicholi Hapsi,<br />
+                Indore - 452016, Madhya Pradesh, India
+              </p>
+            </a>
           </div>
         </div>
       </div>
