@@ -12,7 +12,7 @@ const Home = () => {
   const featuredElevators = products.slice(0, 4);
 
   return (
-    <div className='flex flex-col pb-20'>
+    <div className='flex flex-col pb-20 bg-[#F5F6F7]'>
       {/* Hero Section */}
       <section className="relative h-screen w-full flex flex-col overflow-hidden">
         <div className="absolute inset-0">
@@ -31,10 +31,10 @@ const Home = () => {
         {/* FIXED HERE: added pt-28 lg:pt-32 */}
         <div className="flex-1 flex flex-col lg:flex-row px-8 lg:px-16 pt-28 lg:pt-32 items-center relative z-10">
 
-          <div className="w-full lg:w-[55%] flex flex-col gap-5">
-            <div className="inline-flex items-center gap-2 border border-primary/40 rounded-full px-4 py-1 w-fit">
-              <span className="text-primary text-[10px]">●</span>
-              <span className="text-[11px] uppercase tracking-widest text-primary/80">Est. 2018 · Indore, India</span>
+          <div className="w-full lg:w-[55%] flex flex-col gap-5 text-white">
+            <div className="inline-flex items-center gap-2 border border-[#F26522] rounded-full px-4 py-1 w-fit bg-white/5 backdrop-blur-sm">
+              <span className="text-[#F26522] text-[10px]">●</span>
+              <span className="text-[11px] uppercase tracking-widest text-white/70">Est. 2018 · Indore, India</span>
             </div>
 
             <div className="flex flex-col space-y-[-1rem] pb-30">
@@ -42,7 +42,7 @@ const Home = () => {
                 The Art of
               </span>
 
-              <span className="text-5xl md:text-6xl lg:text-[4.25rem] font-serif italic text-primary py-2 ml-8 lg:ml-20 -my-4 relative z-10">
+              <span className="text-5xl md:text-6xl lg:text-[4.25rem] font-serif italic text-[#F26522] py-2 ml-8 lg:ml-20 -my-4 relative z-10">
                 Vertical
               </span>
 
@@ -51,16 +51,16 @@ const Home = () => {
               </span>
             </div>
 
-            <p className="max-w-md text-white/60 text-lg font-light leading-relaxed font-manrope">
+            <p className="max-w-md text-white/70 text-lg font-light leading-relaxed font-manrope">
               Precision-crafted elevators for India's most distinguished residential and commercial spaces.
             </p>
 
             <div className="flex flex-wrap gap-6 pt-4">
-              <Link to="/collection" className="bg-primary text-black px-8 py-4 font-bold text-sm tracking-widest flex items-center gap-2 hover:bg-white transition-all shimmer-effect">
+              <Link to="/collection" className="bg-[#F26522] text-white px-8 py-4 font-bold text-sm tracking-widest flex items-center gap-2 hover:bg-[#ff7a3a] transition-all shimmer-effect shadow-lg shadow-black/30">
                 EXPLORE COLLECTION <ArrowRight size={16} />
               </Link>
 
-              <Link to="/portfolio" className="border border-white/20 text-white hover:border-primary px-8 py-4 font-bold text-sm tracking-widest transition-all">
+              <Link to="/portfolio" className="border border-[#E5E7EB] text-white hover:border-[#F26522] px-8 py-4 font-bold text-sm tracking-widest transition-all bg-white/5 hover:bg-white/10">
                 VIEW PROJECTS
               </Link>
             </div>
@@ -68,28 +68,28 @@ const Home = () => {
             <div className="flex items-center gap-8 pt-6 border-t border-white/10 mt-4">
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">200+</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Projects</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/60">Projects</span>
               </div>
 
-              <div className="h-8 w-px bg-primary/30"></div>
+              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
 
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">15+</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Cities</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/60">Cities</span>
               </div>
 
-              <div className="h-8 w-px bg-primary/30"></div>
+              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
 
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">6 Yrs</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Experience</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/60">Experience</span>
               </div>
 
-              <div className="h-8 w-px bg-primary/30"></div>
+              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
 
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">98%</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Satisfaction</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/60">Satisfaction</span>
               </div>
             </div>
           </div>

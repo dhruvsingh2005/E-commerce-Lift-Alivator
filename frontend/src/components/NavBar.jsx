@@ -17,40 +17,40 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-black backdrop-blur-md border-b border-primary/10">
+        <nav className="fixed top-0 w-full z-50 bg-[#163D35] backdrop-blur-md border-b border-[#E5E7EB]/20">
             <div className="w-full pl-5 pr-8 lg:pl-12 lg:pr-16 h-24 flex items-center justify-between gap-10">
                 <Link to="/" className="flex items-center gap-2 shrink-0 mr-8 md:mr-12">
                     <img src={assets.logo1} alt="Winsume Lift Logo" className="h-24 w-auto object-contain" />
                     <div className="flex flex-col">
                         <span className="serif-title text-lg font-semibold tracking-wider uppercase text-white leading-tight whitespace-nowrap">Winsume Lift India</span>
-                        <span className="serif-title text-[10px] font-semibold tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
+                        <span className="serif-title text-[10px] font-semibold tracking-wider uppercase text-[#F26522] leading-tight">Private Limited</span>
                     </div>
                 </Link>
 
-                <div className="flex items-center gap-4 md:gap-10 text-[11px] md:text-[13px] uppercase tracking-[0.2em] font-medium text-white/60 overflow-x-auto whitespace-nowrap">
-                    <NavLink to="/portfolio" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Portfolio</NavLink>
-                    <NavLink to="/collection" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Collection</NavLink>
-                    <NavLink to="/services" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Services</NavLink>
-                    <NavLink to="/about" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>About</NavLink>
-                    <NavLink to="/contact" className={({isActive}) => isActive ? "text-primary transition-colors" : "hover:text-primary transition-colors"}>Contact</NavLink>
+                <div className="flex items-center gap-4 md:gap-10 text-[11px] md:text-[13px] uppercase tracking-[0.2em] font-medium text-white/70 overflow-x-auto whitespace-nowrap">
+                    <NavLink to="/portfolio" className={({isActive}) => isActive ? "text-[#F26522] transition-colors" : "hover:text-[#F26522] transition-colors"}>Portfolio</NavLink>
+                    <NavLink to="/collection" className={({isActive}) => isActive ? "text-[#F26522] transition-colors" : "hover:text-[#F26522] transition-colors"}>Collection</NavLink>
+                    <NavLink to="/services" className={({isActive}) => isActive ? "text-[#F26522] transition-colors" : "hover:text-[#F26522] transition-colors"}>Services</NavLink>
+                    <NavLink to="/about" className={({isActive}) => isActive ? "text-[#F26522] transition-colors" : "hover:text-[#F26522] transition-colors"}>About</NavLink>
+                    <NavLink to="/contact" className={({isActive}) => isActive ? "text-[#F26522] transition-colors" : "hover:text-[#F26522] transition-colors"}>Contact</NavLink>
                 </div>
 
                 <div className="flex items-center gap-6">
                     {token ? (
                         <>
                             <div className='group relative'>
-<Link to="/orders" className="text-white/60 hover:text-primary transition-colors">
+                                <Link to="/orders" className="text-white/70 hover:text-[#F26522] transition-colors">
                                 <User size={24} />
                                 </Link>
                                 <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-obsidian border border-white/10 text-white rounded text-[10px] uppercase tracking-widest font-bold shadow-lg'>
-                                        <Link to='/orders' className='hover:text-primary transition-colors'>Projects</Link>
+                                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-[#163D35] border border-[#E5E7EB]/20 text-white rounded text-[10px] uppercase tracking-widest font-bold shadow-lg'>
+                                        <Link to='/orders' className='hover:text-[#F26522] transition-colors'>Projects</Link>
                                         <hr className="border-white/10" />
-                                        <p onClick={logout} className='hover:text-primary transition-colors cursor-pointer flex items-center gap-2'>Logout <LogOut size={12}/></p>
+                                        <p onClick={logout} className='hover:text-[#F26522] transition-colors cursor-pointer flex items-center gap-2'>Logout <LogOut size={12}/></p>
                                     </div>
                                 </div>
                             </div>
-                            <Link to="/cart" className="relative text-white/60 hover:text-primary transition-colors">
+                            <Link to="/cart" className="relative text-white/70 hover:text-[#F26522] transition-colors">
                                 <ShoppingBag size={20} />
                                 {getCartCount() > 0 && (
                                     <span className="absolute -top-1 -right-1 bg-primary text-black text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -60,12 +60,12 @@ const NavBar = () => {
                             </Link>
                         </>
                     ) : (
-                        <Link to="/login" className="text-white/60 hover:text-primary transition-colors">
+                        <Link to="/login" className="text-white/70 hover:text-[#F26522] transition-colors">
                             <User size={24} />
                         </Link>
                     )}
                     
-                    <Link to="/contact#inquiry" className="hidden sm:block bg-primary text-black px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-all">
+                    <Link to="/contact#inquiry" className="hidden sm:block bg-[#F26522] text-white px-8 py-3 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white hover:text-[#163D35] transition-all rounded-sm">
                         Inquire
                     </Link>
                 </div>

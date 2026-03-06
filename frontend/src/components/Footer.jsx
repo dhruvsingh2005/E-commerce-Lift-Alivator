@@ -30,7 +30,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-obsidian py-20 px-6 border-t border-white/5">
+    <footer className="bg-[#163D35] py-20 px-6 border-t border-[#E5E7EB]/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="max-w-sm">
           <div className="flex items-center gap-4 mb-8">
@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
           <div>
-            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-primary mb-6">Explore</h6>
+            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-[#F26522] mb-6">Explore</h6>
             <ul className="text-[15px] text-white/50 space-y-4 font-medium tracking-wider">
               <li><Link className="hover:text-white transition-colors" to="/portfolio">Portfolio</Link></li>
               <li><Link className="hover:text-white transition-colors" to="/collection">Collection</Link></li>
@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-primary mb-6">Contact</h6>
+            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-[#F26522] mb-6">Contact</h6>
             <ul className="text-[15px] text-white/50 space-y-4 font-medium tracking-wider">
               <li>Indore Corporate</li>
               <li>Mumbai Branch</li>
@@ -65,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-primary mb-6">Location</h6>
+            <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-[#F26522] mb-6">Location</h6>
             <a
               href={mapsUrl}
               target="_blank"
@@ -81,8 +81,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pt-20 mt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-white/40">
-        <p className="font-medium">© 2024 <span className="text-white font-bold">Winsume Lift India</span> <span className="text-primary/80">Private Limited</span>. All Rights Reserved.</p>
+      <div className="max-w-7xl mx-auto pt-20 mt-20 border-t border-[#E5E7EB]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-white/40">
+        <p className="font-medium">© 2024 <span className="text-white font-bold">Winsume Lift India</span> <span className="text-[#F26522]">Private Limited</span>. All Rights Reserved.</p>
         <div className="flex gap-8">
           <Link className="hover:text-primary transition-colors" to="#">Privacy</Link>
           <Link className="hover:text-primary transition-colors" to="#">Legal</Link>
