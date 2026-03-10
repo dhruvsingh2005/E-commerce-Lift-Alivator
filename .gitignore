@@ -14,7 +14,7 @@ backend/node_modules
 dist
 dist-ssr
 *.local
-frontend/
+
 *.env
 .env
 
