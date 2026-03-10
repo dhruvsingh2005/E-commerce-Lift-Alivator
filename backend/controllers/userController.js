@@ -91,21 +91,19 @@ const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const inputEmail = (email || "").trim().toLowerCase();
-    const envEmail = (process.env.ADMIN_EMAIL || "").trim().toLowerCase();
-    const envPassword = process.env.ADMIN_PASSWORD || "";
+    // Check if variables are defined in .env
+    if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
+       return res.status(500).json({ success: false, message: "Admin credentials not set in server" });
+    }
 
-    if (inputEmail === envEmail && password === envPassword) {
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+      // Important: Sign with the exact same string your middleware expects
       const token = jwt.sign(email + password, process.env.JWT_SECRET);
-
       res.status(200).json({ success: true, token });
     } else {
-      res
-        .status(400)
-        .json({ success: false, message: "Invalid email or password" });
+      res.status(400).json({ success: false, message: "Invalid Admin Credentials" });
     }
   } catch (error) {
-    console.log("Error while logging in admin: ", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

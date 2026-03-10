@@ -16,7 +16,6 @@ const Collection = () => {
 
   const priceRanges = [
     { label: 'All Prices', value: 'all', min: 0, max: Infinity },
-    { label: '₹0 - ₹25,000', value: '0-25000', min: 0, max: 25000 },
     { label: '₹25,000 - ₹50,000', value: '25000-50000', min: 25000, max: 50000 },
     { label: '₹50,000 - ₹1,00,000', value: '50000-100000', min: 50000, max: 100000 },
     { label: '₹1,00,000 - ₹3,00,000', value: '100000-300000', min: 100000, max: 300000 },
@@ -70,15 +69,17 @@ const Collection = () => {
   return (
     <div className="bg-background-dark min-h-screen pt-24">
       {/* Header */}
-      <header className="relative bg-background-dark border-b border-white/10 px-6 lg:px-20 pt-12 pb-20 text-center overflow-visible">
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 select-none pointer-events-none">
-          <span className="text-[320px] font-black text-primary leading-none">02</span>
+     {/* Header - Background Charcoal kiya gaya */}
+     <header className="relative bg-[#1A1A1A] border-b border-white/10 px-6 lg:px-20 pt-12 pb-20 text-center overflow-visible">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 select-none pointer-events-none">
+          {/* Background watermark text yahan aa sakta hai */}
+          <span className="text-[320px] font-black text-white leading-none"></span>
         </div>
         <div className="relative z-50 flex flex-col items-center">
           <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Our Collection</p>
           <h2 className="serif-title text-5xl md:text-7xl font-light text-white mb-6">Elevators & Lifts</h2>
 
-        {/* Filter Tabs */}
+        {/* Filter Tabs - Charcoal par White text best lagta hai */}
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 mt-2 relative z-30 py-2 px-4">
             {categories.map((cat) => (
               <button
@@ -98,7 +99,7 @@ const Collection = () => {
             <div className="relative z-40 mt-2 md:mt-0" ref={dropdownRef}>
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'price' ? null : 'price')}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-sm md:text-base bg-white/10 text-white border border-white/20 rounded"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm md:text-base bg-white/5 text-white border border-white/10 rounded hover:bg-white/10 transition-colors"
               >
                 <span>Price</span>
                 <ChevronDown
@@ -108,7 +109,7 @@ const Collection = () => {
               </button>
 
               {openDropdown === 'price' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-obsidian border border-primary/30 rounded shadow-2xl z-[100] min-w-64 max-h-96 overflow-y-auto">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-[#1A1A1A] border border-white/10 rounded shadow-2xl z-[100] min-w-64 max-h-96 overflow-y-auto">
                   {priceRanges.map((range) => (
                     <button
                       key={range.value}
@@ -118,7 +119,7 @@ const Collection = () => {
                       }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors border-b border-white/5 last:border-b-0 ${
                         selectedPrice === range.value
-                          ? 'bg-primary/20 text-white font-bold'
+                          ? 'bg-primary text-white font-bold'
                           : 'text-white/70 hover:text-white hover:bg-white/5'
                       }`}
                     >
@@ -131,23 +132,23 @@ const Collection = () => {
           </div>
         </div>
       </header>
-
       {/* Product Grid */}
-      <main className="py-20 px-6 lg:px-20">
+     {/* Product Grid - Background Sky Blue kiya gaya */}
+     <main className="py-20 px-6 lg:px-20 bg-[#E0F2FE]">
         <div className="max-w-7xl mx-auto">
           {productsLoading && (
             <div className="text-center py-20">
-              <p className="text-white/60 text-xl font-light">Loading collection…</p>
+              <p className="text-[#1A1A1A]/60 text-xl font-light">Loading collection…</p>
             </div>
           )}
           {!productsLoading && productsError && products.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-white/60 text-xl font-light mb-4">Products could not be loaded.</p>
-              <p className="text-white/40 text-sm max-w-md mx-auto mb-6">{productsError}</p>
+              <p className="text-[#1A1A1A]/60 text-xl font-light mb-4">Products could not be loaded.</p>
+              <p className="text-[#1A1A1A]/40 text-sm max-w-md mx-auto mb-6">{productsError}</p>
               <button
                 type="button"
                 onClick={() => getProductsData()}
-                className="bg-primary text-black px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-white transition-all"
+                className="bg-primary text-white px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#1A1A1A] transition-all"
               >
                 Retry
               </button>
@@ -155,7 +156,7 @@ const Collection = () => {
           )}
           {!productsLoading && !productsError && products.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-white/40 text-xl font-light">No products in the collection yet.</p>
+              <p className="text-[#1A1A1A]/40 text-xl font-light">No products in the collection yet.</p>
             </div>
           )}
           {!productsLoading && products.length > 0 && filterProducts.length > 0 && (
@@ -175,7 +176,7 @@ const Collection = () => {
           )}
           {!productsLoading && products.length > 0 && filterProducts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-white/40 text-xl font-light">No products found for the selected filters.</p>
+              <p className="text-[#1A1A1A]/40 text-xl font-light">No products found for the selected filters.</p>
             </div>
           )}
         </div>

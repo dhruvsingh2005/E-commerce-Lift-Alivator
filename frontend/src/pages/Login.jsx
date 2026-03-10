@@ -30,7 +30,6 @@ const Login = () => {
         try {
           const adminResponse = await axios.post(backendUrl + "/api/user/admin", { email, password });
           if (adminResponse.data.success) {
-            // Optional: store admin token if you ever need it
             localStorage.setItem("adminToken", adminResponse.data.token);
             toast.success("Admin login successful");
             const adminUrl = import.meta.env.VITE_ADMIN_URL || "http://localhost:5174";
@@ -38,7 +37,6 @@ const Login = () => {
             return;
           }
         } catch (adminError) {
-          // If admin login fails with 400 invalid email/password, silently fall back to user login
           const status = adminError.response?.status;
           if (status && status !== 400) {
             const message = adminError.response?.data?.message || adminError.message;
@@ -58,9 +56,8 @@ const Login = () => {
         }
       }
     } catch (error) {
-      console.log(error);
-      const message = error.response?.data?.message || error.message;
-      toast.error(message);
+      console.log("Full Error Object:", error);
+      toast.error(error.response?.data?.message || "Connection Error: Check if Backend is running");
     }
   };
 
@@ -71,10 +68,21 @@ const Login = () => {
   }, [token]);
 
   return (
-    <div className="min-h-screen pt-32 flex flex-col items-center bg-background-dark px-6">
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #c9a74a 1px, transparent 0)", backgroundSize: "48px 48px" }}></div>
+    <div className="min-h-screen w-full relative flex flex-col items-center justify-center px-6 overflow-hidden">
       
-      <form onSubmit={onSubmitHandler} className="w-full max-w-md glass-card border border-blue/10 p-10 rounded-sm relative z-10">
+      {/* Background Image Layer */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: "url('/image_132917.jpg')", 
+          filter: "brightness(0.4)" 
+        }}
+      ></div>
+
+      {/* Decorative radial overlay to maintain the "gold" feel */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none z-1" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #c9a74a 1px, transparent 0)", backgroundSize: "48px 48px" }}></div>
+      
+      <form onSubmit={onSubmitHandler} className="w-full max-w-md backdrop-blur-md bg-black/60 border border-white/10 p-10 rounded-sm relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.8)]">
         <div className="text-center mb-10">
           <p className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-4 font-manrope">Security Portal</p>
           <h2 className="serif-title text-4xl text-white mb-2">{currentState}</h2>
@@ -89,7 +97,7 @@ const Login = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type="text"
-                className="w-full bg-gray-100 border border-gray-200 p-4 pl-12 outline-none focus:border-primary text-gray-900 text-sm transition-colors rounded-sm font-manrope"
+                className="w-full bg-white/5 border border-white/10 p-4 pl-12 outline-none focus:border-primary text-white text-sm transition-colors rounded-sm font-manrope"
                 placeholder="Full Name"
                 required
               />

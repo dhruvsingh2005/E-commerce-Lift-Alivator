@@ -81,14 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pt-20 mt-20 border-t border-[#E5E7EB]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-white/40">
-        <p className="font-medium">© 2024 <span className="text-white font-bold">Winsume Lift India</span> <span className="text-[#F26522]">Private Limited</span>. All Rights Reserved.</p>
-        <div className="flex gap-8">
-          <Link className="hover:text-primary transition-colors" to="#">Privacy</Link>
-          <Link className="hover:text-primary transition-colors" to="#">Legal</Link>
-          <Link className="hover:text-primary transition-colors" to="#">Cookies</Link>
-        </div>
-      </div>
+      
     </footer>
   )
 }

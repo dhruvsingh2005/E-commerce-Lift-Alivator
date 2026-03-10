@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { LogOut, Shield } from "lucide-react";
+import { Home, Shield } from "lucide-react";
 import { assets } from "../assets/assets";
 
 const Navbar = ({ setToken }) => {
@@ -21,10 +21,10 @@ const Navbar = ({ setToken }) => {
             <span className="text-[10px] text-green-500 font-bold uppercase tracking-widest">Protocol Active</span>
           </div>
           <button
-            onClick={() => setToken("")}
+            onClick={() => window.location.href = "http://localhost:5173"}
             className="flex items-center gap-2 px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-black bg-primary hover:bg-white transition-all rounded-sm shimmer-effect"
           >
-            Terminal Logout <LogOut size={14} />
+            Home <Home size={14} />
           </button>
         </div>
       </div>

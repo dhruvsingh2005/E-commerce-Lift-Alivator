@@ -12,7 +12,7 @@ const Home = () => {
   const featuredElevators = products.slice(0, 4);
 
   return (
-    <div className='flex flex-col pb-20 bg-[#F5F6F7]'>
+    <div className='flex flex-col bg-[#F5F6F7]'>
       {/* Hero Section */}
       <section className="relative h-screen w-full flex flex-col overflow-hidden">
         <div className="absolute inset-0">
@@ -21,6 +21,7 @@ const Home = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/elevator.mp4" type="video/mp4" />
@@ -93,18 +94,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-        
-         
-
         </div>
-
       </section>
-
-    
-
       <ContactSection />
-
     </div>
   )
 }

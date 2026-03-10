@@ -29,10 +29,18 @@ const QuoteBuilder = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const {  token } = useContext(ShopContext); // Yahan 'token' add karein
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(backendUrl + '/api/inquiry/add', formData);
+            // Headers mein token bhejna zaroori hai agar backend protected hai
+            const response = await axios.post(
+                backendUrl + '/api/inquiry/add', 
+                formData, 
+                { headers: { token } } // Ye line missing thi
+            );
+
             if (response.data.success) {
                 toast.success(response.data.message);
                 navigate('/quote-summary', { state: { inquiry: formData } });
@@ -41,7 +49,8 @@ const QuoteBuilder = () => {
             }
         } catch (error) {
             console.log(error);
-            toast.error(error.message);
+            // Agar 401 error aata hai toh iska matlab token invalid ya missing hai
+            toast.error(error.response?.data?.message || error.message);
         }
     };
 
@@ -53,7 +62,7 @@ const QuoteBuilder = () => {
                     <div className="w-full md:w-1/3">
                         <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-4">The Selection Process</span>
                         <h1 className="serif-title text-5xl text-white mb-12">Bespoke <br /><span className="text-primary italic">Proposal</span></h1>
-                        
+
                         <div className="space-y-12">
                             <div className={`flex gap-6 items-start transition-opacity ${step === 1 ? 'opacity-100' : 'opacity-30'}`}>
                                 <span className="serif-title text-4xl text-primary/40 leading-none">01</span>
@@ -73,57 +82,59 @@ const QuoteBuilder = () => {
                     </div>
 
                     {/* Right: Form */}
-                    <div className="flex-1 glass-card border border-gray-200 p-12 rounded-sm">
+                    <div className="flex-1 bg-[#0a192f] border border-blue-900/30 p-12 rounded-sm shadow-2xl">
                         {step === 1 && (
                             <div className="space-y-8 animate-in fade-in transition-all duration-700">
-                                <h3 className="serif-title text-3xl text-gray-900 border-b border-primary/20 pb-6">Select Application</h3>
+                                <h3 className="serif-title text-3xl text-blue-100 border-b border-blue-500/20 pb-6">Select Application</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {elevatorOptions.map((opt) => (
-                                        <div 
+                                        <div
                                             key={opt.id}
                                             onClick={() => {
                                                 setFormData({ ...formData, elevatorType: opt.id });
                                                 setStep(2);
                                             }}
-                                            className={`p-6 border transition-all cursor-pointer group ${formData.elevatorType === opt.id ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/50'}`}
+                                            className={`p-6 border transition-all cursor-pointer group rounded-md ${formData.elevatorType === opt.id ? 'border-cyan-400 bg-cyan-900/20' : 'border-blue-900/50 bg-[#112240] hover:border-cyan-500/50'}`}
                                         >
-                                            <h4 className="text-gray-900 text-sm uppercase tracking-widest font-bold mb-2 group-hover:text-primary transition-colors">{opt.title}</h4>
-                                            <p className="text-gray-500 text-[10px] uppercase tracking-wide leading-relaxed">{opt.desc}</p>
+                                            <h4 className="text-blue-100 text-sm uppercase tracking-widest font-bold mb-2 group-hover:text-cyan-400 transition-colors">{opt.title}</h4>
+                                            <p className="text-blue-300/60 text-[10px] uppercase tracking-wide leading-relaxed">{opt.desc}</p>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         )}
-
                         {step === 2 && (
                             <form onSubmit={handleSubmit} className="space-y-8 animate-in slide-in-from-right-4 duration-700">
                                 <div className="flex items-center justify-between border-b border-primary/20 pb-6">
-                                    <h3 className="serif-title text-3xl text-gray-900">Project Details</h3>
+                                    <h3 className="serif-title text-3xl text-white-900">Project Details</h3>
                                     <button onClick={() => setStep(1)} type="button" className="text-[10px] uppercase tracking-widest text-primary font-bold">Back</button>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Full Name</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-white-500 font-bold">Full Name</label>
                                         <input required name="name" onChange={handleInputChange} value={formData.name} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="text" placeholder="John Doe" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Email Address</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-white-500 font-bold">Email Address</label>
                                         <input required name="email" onChange={handleInputChange} value={formData.email} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="email" placeholder="john@example.com" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Phone Number</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-white-500 font-bold">Phone Number</label>
                                         <input required name="phone" onChange={handleInputChange} value={formData.phone} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="tel" placeholder="+91 79428 29113" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">City / Location</label>
+                                        <label className="text-[10px] uppercase tracking-widest text-white-500 font-bold">City / Location</label>
                                         <input name="city" onChange={handleInputChange} value={formData.city} className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors" type="text" placeholder="Indore" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Message / Requirements</label>
+                                    <label className="text-[10px] uppercase tracking-widest text-white-500 font-bold">Message / Requirements</label>
                                     <textarea name="message" onChange={handleInputChange} value={formData.message} rows="4" className="w-full bg-gray-100 border-b border-gray-200 p-4 outline-none focus:border-primary text-gray-900 text-sm transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
                                 </div>
-                                <button type="submit" className="w-full bg-primary text-gray-900 py-5 font-black uppercase tracking-[0.3em] text-xs hover:bg-primary/90 transition-all shadow-xl shimmer-effect">
+                                <button
+                                    type="submit"
+                                    className="w-full bg-[#F26522] text-white py-5 font-black uppercase tracking-[0.3em] text-xs hover:bg-[#d4561c] transition-all shadow-xl shimmer-effect"
+                                >
                                     Request Consultation
                                 </button>
                             </form>

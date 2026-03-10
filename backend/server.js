@@ -9,44 +9,33 @@ import projectRouter from "./routes/projectRoute.js";
 import inquiryRouter from "./routes/inquiryRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 
-// INFO: Create express app
 const app = express();
 const port = process.env.PORT || 4000;
 
+// MIDDLEWARES
+app.use(express.json());
+// Sabse aasaan solution: Sabhi local ports ko allow karein
+app.use(cors()); 
 
-app.use(cors({
-    origin: [
-      'http://localhost:5173',
-      'https://e-commerce-lift-alivator-eqkb.vercel.app'
-    ],
-    credentials: true,
-  }));
-
-// INFO: Connect to services
+// CONNECT TO SERVICES
 const startServer = async () => {
     try {
         await connectDB();
         await connectCloudinary();
 
-        // INFO: Middleware
-        app.use(express.json());
-        app.use(cors());
-
-        // INFO: API endpoints
+        // API ENDPOINTS
         app.use("/api/user", userRouter);
         app.use("/api/product", productRouter);
         app.use("/api/project", projectRouter);
         app.use("/api/inquiry", inquiryRouter);
         app.use("/api/cart", cartRouter);
 
-        // INFO: Default route
         app.get("/", (req, res) => {
             res.send("API is running...");
         });
 
-        // INFO: Start server
         app.listen(port, () =>
-            console.log(`Server is running on at http://localhost:${port}`)
+            console.log(`Server is running at http://localhost:${port}`)
         );
     } catch (error) {
         console.error("Failed to start server:", error);

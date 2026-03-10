@@ -28,53 +28,58 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className="pt-24 pb-16 min-h-screen bg-background-dark">
-            <section className="max-w-7xl mx-auto px-6 lg:px-12 relative">
-                <div className="absolute -left-12 lg:left-0 top-12 select-none pointer-events-none">
-                    <span className="section-marker opacity-10 font-serif text-[12rem] text-primary">04</span>
-                </div>
-                <div className="relative z-10 w-full max-w-3xl mx-auto text-center">
-                    <h1 className="serif-title text-6xl md:text-8xl text-white font-medium mb-8">Our Work</h1>
-                    <div className="gold-hairline mt-4 mx-auto"></div>
-                </div>
-                <div className="max-w-2xl mx-auto mt-8 text-center">
-                    <p className="text-gray-500 text-lg font-light leading-relaxed font-manrope">
-                        Setting the standard in vertical mobility with bespoke architectural solutions. Discover our prestigious installations across India's premier commercial and residential developments.
-                    </p>
-                </div>
-            </section>
-
-            <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24 mt-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Featured Project */}
-                    <div className="lg:col-span-2 group relative aspect-[16/10] overflow-hidden border-t border-primary/50">
-                        <div className="absolute inset-0 bg-background-dark/40 group-hover:bg-background-dark/20 transition-all duration-700 z-10"></div>
-                        <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80 z-20"></div>
-                        <div className="absolute bottom-0 left-0 w-full p-8 z-40">
-                            <p className="text-primary font-manrope text-[10px] tracking-[0.4em] uppercase mb-2">{projects[0].location}</p>
-                            <h3 className="serif-title text-4xl md:text-5xl text-white mb-2">{projects[0].title}</h3>
-                            <p className="text-white/70 text-sm font-medium tracking-wide uppercase italic">{projects[0].description}</p>
-                        </div>
+        <div className="pt-24 bg-primary">
+        {/* Header Section */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+            <div className="absolute -left-12 lg:left-0 top-12 select-none pointer-events-none">
+                {/* Watermark ko black opacity ke saath rakha hai taaki orange par subtle dikhe */}
+                <span className="section-marker opacity-10 font-serif text-[12rem] text-black"></span>
+            </div>
+            <div className="relative z-10 w-full max-w-3xl mx-auto text-center">
+                {/* Heading ko Dark Charcoal kiya hai professional contrast ke liye */}
+                <h1 className="serif-title text-6xl md:text-8xl text-[#1A1A1A] font-medium mb-8">Our Work</h1>
+                <div className="gold-hairline mt-4 mx-auto bg-white h-[1px] w-24"></div>
+            </div>
+            <div className="max-w-2xl mx-auto mt-8 text-center">
+                <p className="text-black text-lg font-light leading-relaxed font-manrope">
+                    Setting the standard in vertical mobility with bespoke architectural solutions. Discover our prestigious installations across India's premier commercial and residential developments.
+                </p>
+            </div>
+        </section>
+    
+        {/* Projects Grid Section */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24 mt-20">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Featured Project */}
+                <div className="lg:col-span-2 group relative aspect-[16/10] overflow-hidden border-t border-black/20">
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-700 z-10"></div>
+                    <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-20"></div>
+                    <div className="absolute bottom-0 left-0 w-full p-8 z-40">
+                        <p className="text-white font-manrope text-[10px] tracking-[0.4em] uppercase mb-2">{projects[0].location}</p>
+                        <h3 className="serif-title text-4xl md:text-5xl text-white mb-2">{projects[0].title}</h3>
+                        <p className="text-white/70 text-sm font-medium tracking-wide uppercase italic">{projects[0].description}</p>
                     </div>
-
-                    {/* Side Projects */}
-                    <div className="flex flex-col gap-8">
-                        {projects.slice(1).map((project, index) => (
-                            <div key={index} className="group relative aspect-square overflow-hidden border-t border-primary/50">
-                                <div className="absolute inset-0 bg-background-dark/40 z-10 transition-all duration-700"></div>
-                                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-20"></div>
-                                <div className="absolute bottom-0 left-0 w-full p-6 z-40">
-                                    <p className="text-primary font-manrope text-[9px] tracking-[0.4em] uppercase mb-1">{project.location}</p>
-                                    <h3 className="serif-title text-2xl text-white">{project.title}</h3>
-                                    <p className="text-white/50 text-[11px] uppercase tracking-widest">{project.description}</p>
-                                </div>
+                </div>
+    
+                {/* Side Projects */}
+                <div className="flex flex-col gap-8">
+                    {projects.slice(1).map((project, index) => (
+                        <div key={index} className="group relative aspect-square overflow-hidden border-t border-black/20">
+                            <div className="absolute inset-0 bg-black/30 z-10 transition-all duration-700"></div>
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-20"></div>
+                            <div className="absolute bottom-0 left-0 w-full p-6 z-40">
+                                <p className="text-white font-manrope text-[9px] tracking-[0.4em] uppercase mb-1">{project.location}</p>
+                                <h3 className="serif-title text-2xl text-white">{project.title}</h3>
+                                <p className="text-white/50 text-[11px] uppercase tracking-widest">{project.description}</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
+            </div>
+        </section>
+    
             <ContactSection />
         </div>
     )
