@@ -162,9 +162,9 @@ const Orders = ({ token }) => {
                   <ChevronRight size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-primary group-hover/select:text-primary transition-colors pointer-events-none" />
                 </div>
                 
-                <button className="w-full mt-2 py-3 border border-white/20 text-white/60 text-xs font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all rounded-sm">
+                {/* <button className="w-full mt-2 py-3 border border-white/20 text-white/60 text-xs font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all rounded-sm">
                   View Dossier
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
