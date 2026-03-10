@@ -5,8 +5,8 @@ import { assets } from "../assets/assets";
 
 const Navbar = ({ setToken }) => {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-obsidian border-b border-white/5 px-6 lg:px-10 py-2">
-      <div className="flex items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full bg-obsidian border-b border-white/5 px-6 lg:px-10 py-4">
+      <div className="flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <img src={assets.logo} alt="Winsume Lift Logo" className="h-16 w-auto transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
