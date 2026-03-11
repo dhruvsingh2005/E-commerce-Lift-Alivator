@@ -19,8 +19,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       />
 
       {/* Sidebar */}
-      <aside className={`w-64 lg:w-[20%] fixed top-0 left-0 bottom-0 bg-obsidian border-r border-white/5 pt-28 z-40 transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
-        <div className="flex flex-col gap-2">
+      <aside className={`w-64 lg:w-[20%] fixed top-14 sm:top-16 left-0 bottom-0 bg-obsidian border-r border-white/5 z-40 transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+        <div className="flex flex-col gap-2 pt-6">
           <div className="px-8 mb-4">
             <p className="text-[11px] uppercase tracking-[0.4em] text-white font-black">
               Core Management
