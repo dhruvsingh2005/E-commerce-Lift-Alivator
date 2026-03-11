@@ -32,8 +32,8 @@ const Footer = () => {
     <footer className="bg-[#163D35] py-12 sm:py-20 px-4 sm:px-6 border-t border-[#E5E7EB]/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
         <div className="max-w-sm">
-          <div className="flex items-center gap-4 mb-8">
-            <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-20 sm:h-28 w-auto object-contain" />
+          <div className="flex items-center gap-2 mb-8 -ml-12 sm:-ml-16">
+            <img src="/winsume-logo.png" alt="Winsume Lift Logo" className="h-28 sm:h-36 md:h-40 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="serif-title text-2xl font-medium tracking-wider uppercase text-white leading-tight">Winsume Lift India</span>
               <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
