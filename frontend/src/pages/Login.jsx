@@ -32,7 +32,8 @@ const Login = () => {
           if (adminResponse.data.success) {
             localStorage.setItem("adminToken", adminResponse.data.token);
             toast.success("Admin login successful");
-            const adminUrl = import.meta.env.VITE_ADMIN_URL || "/admin";
+            const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+            const adminUrl = isLocal ? "http://localhost:5174" : "https://e-commerce-lift-alivator-kbcq.vercel.app";
             window.location.href = adminUrl;
             return;
           }
