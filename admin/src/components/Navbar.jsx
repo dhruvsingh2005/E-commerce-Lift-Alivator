@@ -25,7 +25,7 @@ const Navbar = ({ setToken, sidebarOpen, setSidebarOpen }) => {
           <span className="text-[9px] text-green-500 font-bold uppercase tracking-widest">Protocol Active</span>
         </div>
         <button
-          onClick={() => window.location.href = "http://localhost:5173"}
+          onClick={() => window.location.href = import.meta.env.VITE_FRONTEND_URL || "/"}
           className="flex items-center gap-1 px-2.5 py-1 sm:px-5 sm:py-2 text-[8px] sm:text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] text-black bg-primary hover:bg-white transition-all rounded-sm shimmer-effect"
         >
           <Home size={12} />
