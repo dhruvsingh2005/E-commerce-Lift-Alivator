@@ -22,10 +22,10 @@ const NavBar = () => {
         <nav className="fixed top-0 w-full z-50 bg-[#163D35] outline-none border-none ring-0">
             <div className="w-full px-4 sm:pl-5 sm:pr-8 lg:pl-12 lg:pr-16 h-20 sm:h-24 flex items-center justify-between gap-4 sm:gap-10">
                 <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 md:mr-12 outline-none h-full">
-                    <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-full w-16 sm:w-24 md:w-28 object-contain" />
+                    <img src="/winsume-logo.png" alt="Winsume Lift Logo" className="h-28 sm:h-36 md:h-40 w-auto object-contain -my-6 sm:-my-10" />
                     <div className="flex flex-col">
                         <span className="serif-title text-sm sm:text-lg font-semibold tracking-wider uppercase text-white leading-tight whitespace-nowrap">Winsume Lift India</span>
-                        <span className="serif-title text-[8px] sm:text-[10px] font-semibold tracking-wider uppercase text-[#F26522] leading-tight font-bold">Private Limited</span>
+                        <span className="serif-title text-[10px] sm:text-[15px] font-semibold tracking-wider uppercase text-[#F26522] leading-tight font-bold">Private Limited</span>
                     </div>
                 </Link>
 
