@@ -30,7 +30,7 @@ const Home = () => {
         </div>
 
         {/* FIXED HERE: added pt-28 lg:pt-32 */}
-        <div className="flex-1 flex flex-col lg:flex-row px-8 lg:px-16 pt-28 lg:pt-32 items-center relative z-10">
+        <div className="flex-1 flex flex-col lg:flex-row px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 lg:pt-32 items-center relative z-10">
 
           <div className="w-full lg:w-[55%] flex flex-col gap-5 text-white">
             <div className="inline-flex items-center gap-2 border border-[#F26522] rounded-full px-4 py-1 w-fit bg-white/5 backdrop-blur-sm">
@@ -39,15 +39,15 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col space-y-[-1rem] pb-30">
-              <span className="text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight leading-tight text-white">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight leading-tight text-white">
                 The Art of
               </span>
 
-              <span className="text-5xl md:text-6xl lg:text-[4.25rem] font-serif italic text-[#F26522] py-2 ml-8 lg:ml-20 -my-4 relative z-10">
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-serif italic text-[#F26522] py-2 ml-4 sm:ml-8 lg:ml-20 -my-4 relative z-10">
                 Vertical
               </span>
 
-              <span className="text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight text-white ml-[8rem] md:ml-[10rem] lg:ml-[13rem]">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extralight tracking-tight text-white ml-16 sm:ml-[8rem] md:ml-[10rem] lg:ml-[13rem]">
                 Mastery.
               </span>
             </div>
@@ -56,7 +56,7 @@ const Home = () => {
               Precision-crafted elevators for India's most distinguished residential and commercial spaces.
             </p>
 
-            <div className="flex flex-wrap gap-6 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 pt-4">
               <Link to="/collection" className="bg-[#F26522] text-white px-8 py-4 font-bold text-sm tracking-widest flex items-center gap-2 hover:bg-[#ff7a3a] transition-all shimmer-effect shadow-lg shadow-black/30">
                 EXPLORE COLLECTION <ArrowRight size={16} />
               </Link>
@@ -66,30 +66,24 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-8 pt-6 border-t border-white/10 mt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 pt-6 border-t border-white/10 mt-4">
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">200+</span>
+                <span className="text-xl sm:text-2xl font-bold text-white">200+</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/60">Projects</span>
               </div>
 
-              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
-
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">15+</span>
+                <span className="text-xl sm:text-2xl font-bold text-white">15+</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/60">Cities</span>
               </div>
 
-              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
-
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">6 Yrs</span>
+                <span className="text-xl sm:text-2xl font-bold text-white">6 Yrs</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/60">Experience</span>
               </div>
 
-              <div className="h-8 w-px bg-[#E5E7EB]/30"></div>
-
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">98%</span>
+                <span className="text-xl sm:text-2xl font-bold text-white">98%</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/60">Satisfaction</span>
               </div>
             </div>

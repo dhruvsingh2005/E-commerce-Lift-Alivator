@@ -6,14 +6,14 @@ const About = () => {
     return (
         <div className="pt-20">
     {/* Hero Section */}
-    <section className="relative min-h-[70vh] flex flex-col items-center justify-center px-6">
+    <section className="relative min-h-[70vh] flex flex-col items-center justify-center px-4 sm:px-6">
         <div className="absolute inset-0 opacity-40">
             <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAr6xlf8FH3Dp5TpPXSaHbiGGJS_MYLdMbrlOBH51VdQ1gvyPGjmBkFqGykHAWtCrreJNvzMuA4Wz3VBLcdkzVtrZtGRhEq3Tc_fbhujcTI-t__1kVf1l95XlOzDsUII63XiMFTM1zW4uc5a2BuXFr30CppHTk1v9rwGVtNeUsZwAt-yyMsCJRRpvuvZaj7hm7DpWU0EN5pFZ8sHJF05DiT2FZgCgeJ63nilquRKmEoGyIUVeWu-NZdaKRQ6EnOo9Lvxsm2UbL5wn4i')" }}></div>
             <div className="absolute inset-0 bg-black/60"></div>
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto">
             <span className="text-primary tracking-[0.4em] text-[10px] uppercase mb-8 block font-semibold">Elevating the Standard</span>
-            <h1 className="serif-title text-6xl md:text-8xl font-light mb-8 text-white">Our Story</h1>
+            <h1 className="serif-title text-4xl sm:text-6xl md:text-8xl font-light mb-8 text-white">Our Story</h1>
             <div className="gold-hairline w-32 mx-auto mb-12"></div>
             <p className="text-lg md:text-xl font-light leading-relaxed text-white/70 max-w-2xl mx-auto italic serif-title">
                 A legacy of vertical mastery and gold-standard heritage. Engineering the future of luxury mobility with vision, precision, and an unwavering commitment to the extraordinary.
@@ -22,13 +22,11 @@ const About = () => {
     </section>
 
     {/* Craftsmanship - Ise edge-to-edge orange kiya gaya hai */}
-    <section className="py-32 bg-primary relative overflow-hidden w-full">
-        {/* Section Number Overlay */}
-        <div className="absolute -left-10 top-20 section-number text-[20rem] font-bold select-none pointer-events-none opacity-10 text-black">01</div>
+    <section className="py-16 sm:py-32 bg-primary relative overflow-hidden w-full">
+        <div className="absolute -left-10 top-20 section-number text-[10rem] sm:text-[20rem] font-bold select-none pointer-events-none opacity-10 text-black">01</div>
         
-        {/* Content Container - Content ko center mein rakhne ke liye */}
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-16 items-center">
         <div className="lg:col-span-5 relative z-10">
             <h2 className="serif-title text-4xl md:text-5xl mb-8 leading-tight text-[#1A1A1A]">Mastery in <br /><span className="text-[#F15A29] italic">Craftsmanship</span></h2>
             {/* Paragraph ko Pure White kiya gaya hai */}
@@ -61,8 +59,8 @@ const About = () => {
     </section>
 
             {/* Company & Compliance */}
-            <section className="py-32 bg-primary relative w-full overflow-hidden">
-    <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <section className="py-16 sm:py-32 bg-primary relative w-full overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="relative mb-16">
             <h2 className="serif-title text-4xl md:text-5xl mb-6 relative z-10 text-[#1A1A1A]">
                 Company & <br />
@@ -70,7 +68,7 @@ const About = () => {
             </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-10 relative z-10">
             {[
                 { icon: Briefcase, label: "Nature of Business", value: "Service Provider and Others" },
                 { icon: Users, label: "Total Number of Employees", value: "Upto 10 People" },

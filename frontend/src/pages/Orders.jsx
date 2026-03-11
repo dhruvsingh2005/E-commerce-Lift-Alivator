@@ -34,38 +34,38 @@ const Orders = () => {
     }
 
     return (
-        <div className="pt-24 min-h-screen bg-background-dark">
-            <section className="max-w-7xl mx-auto px-6 py-12">
-                <header className="mb-12 border-b border-gray-200 pb-8">
-                    <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-4">Account Archive</span>
-                    <h1 className="serif-title text-5xl text-gray-900">My <span className="italic text-primary/90">Engagements</span></h1>
+        <div className="pt-20 sm:pt-24 min-h-screen bg-background-dark">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+                <header className="mb-8 sm:mb-12 border-b border-white/10 pb-6 sm:pb-8">
+                    <span className="text-primary text-xs uppercase tracking-[0.4em] font-bold block mb-4">Account Archive</span>
+                    <h1 className="serif-title text-3xl sm:text-5xl text-white">My <span className="italic text-primary/90">Engagements</span></h1>
                 </header>
 
                 <div className="space-y-6">
                     {inquiryData.map((order, index) => (
-                        <div key={index} className="glass-card border border-gray-200 p-10 rounded-sm">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10 pb-10 border-b border-gray-200">
+                        <div key={index} className="glass-card border border-white/15 bg-black/40 p-4 sm:p-6 md:p-10 rounded-sm">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-8 mb-6 sm:mb-10 pb-6 sm:pb-10 border-b border-white/10">
                                 <div className="flex items-center gap-6">
-                                    <div className="w-16 h-16 bg-primary/10 rounded-sm flex items-center justify-center border border-primary/20">
+                                    <div className="w-16 h-16 bg-primary/15 rounded-sm flex items-center justify-center border border-primary/40">
                                         <Package size={24} className="text-primary" />
                                     </div>
                                     <div>
-                                        <p className="text-gray-500 text-[9px] uppercase tracking-widest font-bold mb-1">Enquiry ID</p>
-                                        <h3 className="text-gray-900 font-mono text-lg tracking-wider uppercase">WL-{order._id.slice(-6)}</h3>
+                                        <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-1">Enquiry ID</p>
+                                        <h3 className="text-white font-mono text-lg tracking-wider uppercase">WL-{order._id.slice(-6)}</h3>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
                                     <div>
-                                        <p className="text-gray-500 text-[9px] uppercase tracking-widest font-bold mb-1">Initiated</p>
-                                        <p className="text-gray-900 text-xs font-medium">{new Date(order.date).toLocaleDateString()}</p>
+                                        <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-1">Initiated</p>
+                                        <p className="text-white text-xs font-medium">{new Date(order.date).toLocaleDateString()}</p>
                                     </div>
                                     <div>
-                                        <p className="text-gray-500 text-[9px] uppercase tracking-widest font-bold mb-1">Type</p>
-                                        <p className="text-gray-900 text-xs font-medium">{order.elevatorType || 'Custom'}</p>
+                                        <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-1">Type</p>
+                                        <p className="text-white text-xs font-medium">{order.elevatorType || 'Custom'}</p>
                                     </div>
                                     <div className="hidden md:block">
-                                        <p className="text-gray-500 text-[9px] uppercase tracking-widest font-bold mb-1">Security</p>
-                                        <p className="text-green-600 text-xs font-bold flex items-center gap-1">
+                                        <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-1">Security</p>
+                                        <p className="text-green-400 text-xs font-bold flex items-center gap-1">
                                             <ShieldAlert size={12} /> PROTOCOL ACTIVE
                                         </p>
                                     </div>
@@ -73,25 +73,24 @@ const Orders = () => {
                             </div>
 
                             <div className="space-y-8">
-                                <div className="flex flex-col md:flex-row justify-between items-center gap-6 p-6 bg-gray-50 border border-gray-200 rounded-sm">
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white/5 border border-white/15 rounded-sm">
                                     <div className="flex items-center gap-6 flex-1">
                                         <div>
-                                            <h4 className="serif-title text-xl text-gray-900 mb-1">Consultation for {order.city}</h4>
-                                            <p className="text-gray-500 text-[11px] leading-relaxed max-w-lg italic font-manrope">"{order.message.slice(0, 100)}{order.message.length > 100 ? '...' : ''}"</p>
+                                            <h4 className="serif-title text-xl text-white mb-1">Consultation for {order.city}</h4>
+                                            <p className="text-white/70 text-sm leading-relaxed max-w-lg italic font-manrope">
+                                                "{order.message.slice(0, 140)}{order.message.length > 140 ? '...' : ''}"
+                                            </p>
                                         </div>
                                     </div>
                                     
-                                    <div className="flex items-center gap-12">
+                                    <div className="flex items-center justify-start md:justify-end gap-4 sm:gap-12">
                                         <div className="text-center">
-                                            <p className="text-gray-500 text-[9px] uppercase tracking-widest font-bold mb-2">Stage</p>
-                                            <div className="flex items-center gap-2 px-4 py-1.5 border border-primary/20 rounded-full bg-primary/5">
+                                            <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-2">Stage</p>
+                                            <div className="flex items-center gap-2 px-4 py-1.5 border border-primary/40 rounded-full bg-primary/10">
                                                 {getStatusIcon(order.status)}
-                                                <span className="text-[10px] text-gray-900 font-black uppercase tracking-widest">{order.status}</span>
+                                                <span className="text-[10px] text-white font-black uppercase tracking-widest">{order.status}</span>
                                             </div>
                                         </div>
-                                        <button className="bg-gray-900 text-white px-6 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary transition-all rounded-sm">
-                                            Track Document
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +98,8 @@ const Orders = () => {
                     ))}
 
                     {inquiryData.length === 0 && (
-                        <div className="py-32 text-center border border-gray-200 rounded-sm bg-gray-50">
-                            <p className="text-gray-500 text-xl font-light mb-8 italic serif-title">No architectural history found.</p>
+                        <div className="py-32 text-center border border-white/10 rounded-sm bg-black/40">
+                            <p className="text-white/60 text-xl font-light mb-8 italic serif-title">No architectural history found.</p>
                             <Link to="/collection" className="bg-primary text-gray-900 px-10 py-4 font-black uppercase tracking-[0.3em] text-[10px] hover:bg-primary/90 transition-all">
                                 Begin Consultation
                             </Link>

@@ -28,12 +28,12 @@ const Cart = () => {
   }, 0);
 
   return (
-    <div className="pt-24 min-h-screen bg-background-dark">
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <header className="mb-12 border-b border-white/10 pb-8 flex justify-between items-end">
+    <div className="pt-20 sm:pt-24 min-h-screen bg-background-dark">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <header className="mb-8 sm:mb-12 border-b border-white/10 pb-6 sm:pb-8 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
           <div>
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-4">Selection Summary</span>
-            <h1 className="serif-title text-5xl text-white font-medium">Your <span className="italic text-primary/90">Inquiry List</span></h1>
+            <h1 className="serif-title text-3xl sm:text-5xl text-white font-medium">Your <span className="italic text-primary/90">Inquiry List</span></h1>
           </div>
           <div className="text-right hidden sm:block">
             <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-1">Total Estimated Investment</p>
@@ -41,38 +41,38 @@ const Cart = () => {
           </div>
         </header>
 
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="flex-1 space-y-6">
             {cartData.map((item, index) => {
               const product = products.find(p => p._id === item._id);
               if (!product) return null;
 
               return (
-                <div key={index} className="glass-card border border-gray-200 p-6 rounded-sm flex gap-6 items-center group">
-                  <div className="w-24 aspect-square rounded-sm overflow-hidden bg-neutral-100 border border-gray-200">
+                <div key={index} className="glass-card border border-white/20 bg-black/40 p-6 rounded-sm flex gap-6 items-center group">
+                  <div className="w-24 aspect-square rounded-sm overflow-hidden bg-neutral-900 border border-white/20">
                     <img src={product.image[0]} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={product.name} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="serif-title text-xl text-gray-900 mb-1">{product.name}</h3>
-                    <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-3">Category: {product.category}</p>
+                    <h3 className="serif-title text-xl text-white mb-1">{product.name}</h3>
+                    <p className="text-white/50 text-[10px] uppercase tracking-widest mb-3">Category: {product.category}</p>
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center border border-gray-200 rounded-sm">
-                        <button onClick={() => updateQuantity(item._id, item.quantity - 1)} className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+                      <div className="flex items-center border border-white/20 rounded-sm">
+                        <button onClick={() => updateQuantity(item._id, item.quantity - 1)} className="p-2 text-white/60 hover:text-white transition-colors">
                           <Minus size={14} />
                         </button>
-                        <span className="w-8 text-center text-xs text-gray-900 font-bold">{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item._id, item.quantity + 1)} className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+                        <span className="w-8 text-center text-xs text-white font-bold">{item.quantity}</span>
+                        <button onClick={() => updateQuantity(item._id, item.quantity + 1)} className="p-2 text-white/60 hover:text-white transition-colors">
                           <Plus size={14} />
                         </button>
                       </div>
-                      <button onClick={() => updateQuantity(item._id, 0)} className="text-gray-400 hover:text-red-500 transition-colors">
+                      <button onClick={() => updateQuantity(item._id, 0)} className="text-white/40 hover:text-red-500 transition-colors">
                         <Trash2 size={18} />
                       </button>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="text-primary text-lg serif-title">{currency}{(product.price * item.quantity).toLocaleString()}</p>
-                    <p className="text-gray-400 text-[9px] uppercase tracking-widest font-bold">Unit: {currency}{product.price.toLocaleString()}</p>
+                    <p className="text-white/40 text-[9px] uppercase tracking-widest font-bold">Unit: {currency}{product.price.toLocaleString()}</p>
                   </div>
                 </div>
               )
@@ -87,7 +87,7 @@ const Cart = () => {
           </div>
 
           <div className="w-full lg:w-[380px]">
-            <div className="glass-card border border-white/10 p-8 rounded-sm sticky top-32">
+            <div className="glass-card border border-white/10 p-6 sm:p-8 rounded-sm sticky top-24 sm:top-32">
               <h4 className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-white/5 pb-4">Estimated Proposal</h4>
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between text-xs tracking-wider">
@@ -108,7 +108,7 @@ const Cart = () => {
                 disabled={cartData.length === 0}
                 className="w-full bg-primary text-black py-4 rounded-sm font-black uppercase tracking-[0.4em] text-[10px] flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-30 disabled:cursor-not-allowed shimmer-effect shadow-xl"
               >
-                PROCEED TO QUOTE <ArrowRight size={14} />
+                SEND INQUIRY <ArrowRight size={14} />
               </button>
               <div className="mt-6 p-4 bg-white/5 border border-primary/20 rounded-sm">
                 <p className="text-[9px] uppercase tracking-widest text-primary/80 leading-relaxed text-center font-manrope">

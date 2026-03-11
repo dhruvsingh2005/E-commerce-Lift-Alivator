@@ -26,9 +26,9 @@ const Product = () => {
   }, [productId, products]);
 
   return productData ? (
-    <div className="pt-24 min-h-screen bg-background-dark">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex flex-col lg:flex-row gap-16">
+    <div className="pt-20 sm:pt-24 min-h-screen bg-background-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-16">
           {/* Images */}
           <div className="flex-1">
             <div className="aspect-[4/5] overflow-hidden rounded-sm border border-white/10 bg-neutral-900 group">
@@ -51,7 +51,7 @@ const Product = () => {
           <div className="flex-1 flex flex-col">
             <div className="mb-8">
               <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block font-manrope">{productData.category} SERIES</span>
-              <h1 className="serif-title text-5xl md:text-6xl text-white mb-4">{productData.name}</h1>
+              <h1 className="serif-title text-3xl sm:text-5xl md:text-6xl text-white mb-4">{productData.name}</h1>
               <div className="flex items-center gap-4 text-white/40 text-xs uppercase tracking-widest font-bold font-manrope">
                 <span className="flex items-center gap-1 text-green-400"><ShieldCheck size={14} /> Certified BIS</span>
                 <span>•</span>
@@ -70,7 +70,7 @@ const Product = () => {
             </div>
 
             <div className="space-y-8 mb-12">
-              <div className="grid grid-cols-2 gap-px bg-white/5 border border-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/10">
                 <div className="p-6">
                   <h4 className="text-white/40 text-[9px] uppercase tracking-widest font-bold mb-4 font-manrope">Technical Specs</h4>
                   <ul className="space-y-3">
@@ -109,16 +109,16 @@ const Product = () => {
         </div>
 
         {/* Extended Specs */}
-        <section className="mt-32 border-t border-white/10 pt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <section className="mt-16 sm:mt-32 border-t border-white/10 pt-10 sm:pt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-16">
             <div className="lg:col-span-1">
-              <h2 className="serif-title text-4xl text-white mb-6">Unrivaled <br /><span className="text-primary italic">Specifications</span></h2>
+              <h2 className="serif-title text-3xl sm:text-4xl text-white mb-6">Unrivaled <br /><span className="text-primary italic">Specifications</span></h2>
               <p className="text-white/50 text-sm leading-loose font-manrope">
                 Engineered for those who demand the zenith of performance. Every specification is a testament to our pursuit of vertical perfection.
               </p>
             </div>
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12">
                 {productData.specifications && Object.entries(productData.specifications).map(([key, value]) => (
                   <div key={key} className="border-b border-white/5 pb-4">
                     <p className="text-primary/60 text-[10px] font-bold uppercase tracking-widest mb-1 font-manrope">{key}</p>

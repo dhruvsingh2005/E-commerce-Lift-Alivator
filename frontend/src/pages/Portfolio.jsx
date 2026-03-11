@@ -28,16 +28,16 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className="pt-24 bg-primary">
+        <div className="pt-20 sm:pt-24 bg-primary">
         {/* Header Section */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative">
             <div className="absolute -left-12 lg:left-0 top-12 select-none pointer-events-none">
                 {/* Watermark ko black opacity ke saath rakha hai taaki orange par subtle dikhe */}
                 <span className="section-marker opacity-10 font-serif text-[12rem] text-black"></span>
             </div>
             <div className="relative z-10 w-full max-w-3xl mx-auto text-center">
                 {/* Heading ko Dark Charcoal kiya hai professional contrast ke liye */}
-                <h1 className="serif-title text-6xl md:text-8xl text-[#1A1A1A] font-medium mb-8">Our Work</h1>
+                <h1 className="serif-title text-4xl sm:text-6xl md:text-8xl text-[#1A1A1A] font-medium mb-8">Our Work</h1>
                 <div className="gold-hairline mt-4 mx-auto bg-white h-[1px] w-24"></div>
             </div>
             <div className="max-w-2xl mx-auto mt-8 text-center">
@@ -48,8 +48,8 @@ const Portfolio = () => {
         </section>
     
         {/* Projects Grid Section */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24 mt-20">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24 mt-10 sm:mt-20">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8">
                 {/* Featured Project */}
                 <div className="lg:col-span-2 group relative aspect-[16/10] overflow-hidden border-t border-black/20">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-700 z-10"></div>

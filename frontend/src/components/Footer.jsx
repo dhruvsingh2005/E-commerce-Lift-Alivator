@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Share2 } from 'lucide-react'
-import { assets } from '../assets/assets'
 
 const Footer = () => {
 
@@ -30,11 +29,11 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-[#163D35] py-20 px-6 border-t border-[#E5E7EB]/20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+    <footer className="bg-[#163D35] py-12 sm:py-20 px-4 sm:px-6 border-t border-[#E5E7EB]/20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
         <div className="max-w-sm">
           <div className="flex items-center gap-4 mb-8">
-            <img src={assets.logo} alt="Winsume Lift Logo" className="h-28 w-auto object-contain" />
+            <img src="/5-90x90.webp" alt="Winsume Lift Logo" className="h-20 sm:h-28 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="serif-title text-2xl font-medium tracking-wider uppercase text-white leading-tight">Winsume Lift India</span>
               <span className="serif-title text-xs font-medium tracking-wider uppercase text-primary/80 leading-tight">Private Limited</span>
@@ -45,7 +44,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
           <div>
             <h6 className="text-[15px] uppercase tracking-[0.3em] font-bold text-[#F26522] mb-6">Explore</h6>
             <ul className="text-[15px] text-white/50 space-y-4 font-medium tracking-wider">

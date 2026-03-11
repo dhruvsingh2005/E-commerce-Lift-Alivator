@@ -67,17 +67,15 @@ const Collection = () => {
   }, [openDropdown]);
 
   return (
-    <div className="bg-background-dark min-h-screen pt-24">
-      {/* Header */}
-     {/* Header - Background Charcoal kiya gaya */}
-     <header className="relative bg-[#1A1A1A] border-b border-white/10 px-6 lg:px-20 pt-12 pb-20 text-center overflow-visible">
+    <div className="bg-background-dark min-h-screen pt-20 sm:pt-24">
+     <header className="relative bg-[#1A1A1A] border-b border-white/10 px-4 sm:px-6 lg:px-20 pt-8 sm:pt-12 pb-12 sm:pb-20 text-center overflow-visible">
         <div className="absolute inset-0 flex items-center justify-center opacity-5 select-none pointer-events-none">
           {/* Background watermark text yahan aa sakta hai */}
           <span className="text-[320px] font-black text-white leading-none"></span>
         </div>
         <div className="relative z-50 flex flex-col items-center">
           <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Our Collection</p>
-          <h2 className="serif-title text-5xl md:text-7xl font-light text-white mb-6">Elevators & Lifts</h2>
+          <h2 className="serif-title text-3xl sm:text-5xl md:text-7xl font-light text-white mb-6">Elevators & Lifts</h2>
 
         {/* Filter Tabs - Charcoal par White text best lagta hai */}
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 mt-2 relative z-30 py-2 px-4">
@@ -134,7 +132,7 @@ const Collection = () => {
       </header>
       {/* Product Grid */}
      {/* Product Grid - Background Sky Blue kiya gaya */}
-     <main className="py-20 px-6 lg:px-20 bg-[#E0F2FE]">
+     <main className="py-10 sm:py-20 px-4 sm:px-6 lg:px-20 bg-[#E0F2FE]">
         <div className="max-w-7xl mx-auto">
           {productsLoading && (
             <div className="text-center py-20">
@@ -160,7 +158,7 @@ const Collection = () => {
             </div>
           )}
           {!productsLoading && products.length > 0 && filterProducts.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
               {filterProducts.map((item, index) => (
                 <ProductItem
                   key={item._id || index}

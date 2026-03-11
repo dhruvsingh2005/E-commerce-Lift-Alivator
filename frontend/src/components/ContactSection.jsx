@@ -60,17 +60,17 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="py-24 bg-[#1A1A1A] relative overflow-hidden">
+    <section className="py-12 sm:py-24 bg-[#1A1A1A] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[rgba(255,255,255,0.03)] rounded-full blur-[120px] -mr-64 -mt-64"></div>
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           
           {/* Left Side: Contact Info */}
           <div className="flex-1">
             <p className="text-[#C2410C] text-[12px] font-bold uppercase tracking-[0.4em] mb-4">
               Get in Touch
             </p>
-            <h2 className="serif-title text-5xl md:text-6xl text-white mb-8">
+            <h2 className="serif-title text-3xl sm:text-5xl md:text-6xl text-white mb-8">
               Let's Discuss Your <br />
               <span className="text-[#F26522] italic">Vertical Vision.</span>
             </h2>
@@ -123,7 +123,7 @@ const ContactSection = () => {
 
           {/* Right Side: Form */}
           <div className="flex-1">
-            <div className="bg-[#1F2933] border border-white/10 p-8 md:p-12 rounded-sm shadow-2xl">
+            <div className="bg-[#1F2933] border border-white/10 p-5 sm:p-8 md:p-12 rounded-sm shadow-2xl">
               <form onSubmit={onSubmitHandler} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">

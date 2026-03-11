@@ -68,7 +68,7 @@ const Login = () => {
   }, [token]);
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center justify-center px-6 overflow-hidden">
+    <div className="min-h-screen w-full relative flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
       
       {/* Background Image Layer */}
       <div 
@@ -82,7 +82,7 @@ const Login = () => {
       {/* Decorative radial overlay to maintain the "gold" feel */}
       <div className="absolute inset-0 opacity-20 pointer-events-none z-1" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #c9a74a 1px, transparent 0)", backgroundSize: "48px 48px" }}></div>
       
-      <form onSubmit={onSubmitHandler} className="w-full max-w-md backdrop-blur-md bg-black/60 border border-white/10 p-10 rounded-sm relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+      <form onSubmit={onSubmitHandler} className="w-full max-w-md backdrop-blur-md bg-black/60 border border-white/10 p-6 sm:p-10 rounded-sm relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.8)]">
         <div className="text-center mb-10">
           <p className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-4 font-manrope">Security Portal</p>
           <h2 className="serif-title text-4xl text-white mb-2">{currentState}</h2>

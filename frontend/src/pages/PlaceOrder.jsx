@@ -65,13 +65,13 @@ const PlaceOrder = () => {
     }
 
     return (
-        <form onSubmit={onSubmitHandler} className="pt-24 min-h-screen bg-background-dark">
-            <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-20">
+        <form onSubmit={onSubmitHandler} className="pt-20 sm:pt-24 min-h-screen bg-background-dark">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex flex-col lg:flex-row gap-10 lg:gap-20">
                 {/* Left side: Information */}
                 <div className="flex-1 flex flex-col">
-                    <div className="mb-12 border-b border-white/10 pb-8">
+                    <div className="mb-8 sm:mb-12 border-b border-white/10 pb-6 sm:pb-8">
                         <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-4">Finalization</span>
-                        <h1 className="serif-title text-5xl text-white mb-2">Architectural <span className="italic text-primary/90">Details</span></h1>
+                        <h1 className="serif-title text-3xl sm:text-5xl text-white mb-2">Architectural <span className="italic text-primary/90">Details</span></h1>
                         <p className="text-white/40 text-sm font-light">Please provide the structural and administrative details for your installation.</p>
                     </div>
 
@@ -97,49 +97,53 @@ const PlaceOrder = () => {
 
                 {/* Right side: Method & Summary */}
                 <div className="w-full lg:w-[450px]">
-                    <div className="glass-card border border-gray-200 p-10 rounded-sm">
+                    <div className="glass-card border border-white/15 bg-black/40 p-6 sm:p-10 rounded-sm">
                         <section className="mb-12">
-                            <h4 className="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-gray-200 pb-4">Payment Commitment</h4>
+                            <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-8 border-b border-white/10 pb-4">
+                                Payment Commitment
+                            </h4>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div onClick={() => setMethod('stripe')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'stripe' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'stripe' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
+                                <div onClick={() => setMethod('stripe')} className={`flex items-center gap-5 border px-5 py-4 cursor-pointer transition-all ${method === 'stripe' ? 'border-primary bg-primary/15' : 'border-white/20 hover:border-primary/40'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'stripe' ? 'bg-primary border-primary' : 'border-white/50'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Secure Card</span>
-                                        <div className="flex gap-2 items-center opacity-40">
-                                            <CreditCard size={12} />
-                                            <span className="text-[8px]">VISA/MASTER</span>
+                                        <span className="text-xs uppercase tracking-widest text-white font-bold">Secure Card</span>
+                                        <div className="flex gap-2 items-center opacity-70 text-white/80 mt-1">
+                                            <CreditCard size={16} />
+                                            <span className="text-[10px]">Visa / MasterCard</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div onClick={() => setMethod('razorpay')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all ${method === 'razorpay' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'razorpay' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
+                                <div onClick={() => setMethod('razorpay')} className={`flex items-center gap-5 border px-5 py-4 cursor-pointer transition-all ${method === 'razorpay' ? 'border-primary bg-primary/15' : 'border-white/20 hover:border-primary/40'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'razorpay' ? 'bg-primary border-primary' : 'border-white/50'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Insta-Pay</span>
-                                        <span className="text-[8px] opacity-40">Upi / Netbank</span>
+                                        <span className="text-xs uppercase tracking-widest text-white font-bold">Insta-Pay</span>
+                                        <span className="text-[10px] opacity-70 text-white/80 mt-1">UPI / Netbanking</span>
                                     </div>
                                 </div>
-                                <div onClick={() => setMethod('cod')} className={`flex items-center gap-4 border p-4 cursor-pointer transition-all sm:col-span-2 ${method === 'cod' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/30'}`}>
-                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'cod' ? 'bg-primary border-primary' : 'border-gray-400'}`}></span>
+                                <div onClick={() => setMethod('cod')} className={`flex items-center gap-5 border px-5 py-4 cursor-pointer transition-all sm:col-span-2 ${method === 'cod' ? 'border-primary bg-primary/15' : 'border-white/20 hover:border-primary/40'}`}>
+                                    <span className={`w-3 h-3 rounded-full border-2 ${method === 'cod' ? 'bg-primary border-primary' : 'border-white/50'}`}></span>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-gray-900 font-bold">Reserve Consultation</span>
-                                        <span className="text-[8px] opacity-40 italic">Confirm with a minimal architectural reservation fee.</span>
+                                        <span className="text-sm uppercase tracking-widest text-white font-bold">Reserve Consultation</span>
+                                        <span className="text-xs opacity-90 italic text-white mt-1 font-semibold">
+                                            Confirm with a minimal architectural reservation fee.
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </section>
 
                         <section className="mb-10">
-                            <h4 className="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-gray-200 pb-4">Proposal Summary</h4>
+                            <h4 className="text-white/60 text-[10px] uppercase tracking-widest font-bold mb-8 border-b border-white/10 pb-4">Proposal Summary</h4>
                             <div className="space-y-4">
                                 <div className="flex justify-between text-xs tracking-wider font-manrope">
-                                    <span className="text-gray-600">Subtotal</span>
-                                    <span className="text-gray-900 font-medium">{currency}{getCartAmount().toLocaleString()}</span>
+                                    <span className="text-white/60">Subtotal</span>
+                                    <span className="text-white font-medium">{currency}{getCartAmount().toLocaleString()}</span>
                                 </div>
                                 <div className="flex justify-between text-xs tracking-wider font-manrope">
-                                    <span className="text-gray-600">Site Survey & Logistics</span>
-                                    <span className="text-gray-900 font-medium">{currency}{delivery_fee.toLocaleString()}</span>
+                                    <span className="text-white/60">Site Survey & Logistics</span>
+                                    <span className="text-white font-medium">{currency}{delivery_fee.toLocaleString()}</span>
                                 </div>
-                                <div className="pt-4 border-t border-gray-200 flex justify-between items-end">
+                                <div className="pt-4 border-t border-white/10 flex justify-between items-end">
                                     <span className="text-primary text-[10px] uppercase tracking-widest font-black">Total Commitment</span>
                                     <span className="text-primary text-2xl serif-title">{currency}{(getCartAmount() + delivery_fee).toLocaleString()}</span>
                                 </div>
