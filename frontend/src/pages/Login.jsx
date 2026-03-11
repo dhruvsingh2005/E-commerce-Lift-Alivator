@@ -32,7 +32,7 @@ const Login = () => {
           if (adminResponse.data.success) {
             localStorage.setItem("adminToken", adminResponse.data.token);
             toast.success("Admin login successful");
-            const adminUrl = import.meta.env.VITE_ADMIN_URL || "http://localhost:5174";
+            const adminUrl = import.meta.env.VITE_ADMIN_URL || "/admin";
             window.location.href = adminUrl;
             return;
           }
