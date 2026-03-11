@@ -46,7 +46,7 @@ const App = () => {
         <>
           <Navbar setToken={setToken} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-          <div className="pt-12 ml-0 lg:ml-[20%] px-4 sm:px-8 py-8 text-gray-200 text-base">
+          <div className="pt-4 ml-0 lg:ml-[20%] px-4 sm:px-8 py-6 text-gray-200 text-base">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/add" element={<Add token={token} />} />
