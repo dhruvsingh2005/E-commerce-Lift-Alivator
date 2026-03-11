@@ -322,17 +322,17 @@ const Add = ({ token }) => {
             <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 cursor-pointer group-hover:text-white transition-colors">Mark as Prestige Asset</label>
           </div>
 
-          <div className="flex gap-4 w-full md:w-auto">
+          <div className="flex gap-3 sm:gap-4 w-full md:w-auto">
             <button
               type="button"
               onClick={resetForm}
-              className="flex-1 md:flex-none px-8 py-4 border border-white/10 text-white/40 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white/5 transition-all rounded-sm"
+              className="flex-1 md:flex-none px-4 sm:px-8 py-3 sm:py-4 border border-white/10 text-white/40 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.3em] hover:bg-white/5 transition-all rounded-sm"
             >
               Clear Protocol
             </button>
             <button
               type="submit"
-              className="flex-1 md:flex-none px-12 py-4 bg-primary text-black text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all rounded-sm shadow-xl shimmer-effect"
+              className="flex-1 md:flex-none px-4 sm:px-12 py-3 sm:py-4 bg-primary text-black text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.3em] hover:bg-white transition-all rounded-sm shadow-xl shimmer-effect"
             >
               Register Architecture
             </button>
