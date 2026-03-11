@@ -50,10 +50,10 @@ const List = ({ token }) => {
 
   return (
     <div className="animation-fadeIn">
-      <div className="mb-10 flex justify-between items-end">
+      <div className="mb-6 sm:mb-10 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
         <div>
           <p className="text-primary text-[10px] uppercase tracking-[0.4em] font-black mb-3">Inventory Dashboard</p>
-          <h2 className="serif-title text-4xl text-white">Registry <span className="italic text-primary/80">List</span></h2>
+          <h2 className="serif-title text-2xl sm:text-4xl text-white">Registry <span className="italic text-primary/80">List</span></h2>
         </div>
         <div className="text-right">
           <p className="text-white/20 text-[9px] uppercase tracking-widest font-black mb-1">Active Assets</p>
@@ -75,7 +75,7 @@ const List = ({ token }) => {
         <div className="divide-y divide-white/5">
           {listProducts.map((item, index) => (
             <div
-              className="grid grid-cols-1 md:grid-cols-[0.8fr_2fr_1fr_1.2fr_0.5fr] items-center gap-6 py-6 px-8 hover:bg-white/[0.02] transition-colors group"
+              className="grid grid-cols-1 md:grid-cols-[0.8fr_2fr_1fr_1.2fr_0.5fr] items-center gap-4 sm:gap-6 py-4 sm:py-6 px-4 sm:px-8 hover:bg-white/[0.02] transition-colors group"
               key={index}
             >
               <div className="relative w-20 h-20 overflow-hidden rounded-sm bg-neutral-900 border border-white/5">

@@ -102,10 +102,10 @@ const Add = ({ token }) => {
     <div className="animation-fadeIn max-w-4xl">
       <div className="mb-10">
         <p className="text-primary text-[10px] uppercase tracking-[0.4em] font-black mb-3">Asset Registration</p>
-        <h2 className="serif-title text-4xl text-white">Add New <span className="italic text-primary/80">Architecture</span></h2>
+        <h2 className="serif-title text-2xl sm:text-4xl text-white">Add New <span className="italic text-primary/80">Architecture</span></h2>
       </div>
 
-      <form onSubmit={onSubmitHandler} className="glass-card border border-white/10 p-10 rounded-sm space-y-10">
+      <form onSubmit={onSubmitHandler} className="glass-card border border-white/10 p-4 sm:p-6 md:p-10 rounded-sm space-y-8 sm:space-y-10">
         {/* Image Upload Section */}
         <section>
           <div className="flex items-center gap-2 mb-6">

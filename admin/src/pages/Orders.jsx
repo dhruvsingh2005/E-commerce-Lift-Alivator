@@ -55,10 +55,10 @@ const Orders = ({ token }) => {
 
   return (
     <div className="animation-fadeIn">
-      <div className="mb-10 flex justify-between items-end">
+      <div className="mb-6 sm:mb-10 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
         <div>
           <p className="text-primary text-xs uppercase tracking-[0.4em] font-black mb-3">Operational Archive</p>
-          <h2 className="serif-title text-4xl md:text-5xl text-white">Project <span className="italic text-primary/80">Engagements</span></h2>
+          <h2 className="serif-title text-2xl sm:text-4xl md:text-5xl text-white">Project <span className="italic text-primary/80">Engagements</span></h2>
         </div>
         <div className="text-right">
           <p className="text-white/40 text-xs uppercase tracking-widest font-black mb-1">Total Registry</p>
@@ -71,7 +71,7 @@ const Orders = ({ token }) => {
           <div key={index} className="glass-card border border-white/15 rounded-sm overflow-hidden group hover:border-primary/40 transition-all duration-500">
             <div className="flex flex-col lg:flex-row">
               {/* Left Column: ID & Date */}
-              <div className="lg:w-56 bg-white/[0.04] p-8 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between">
+              <div className="lg:w-56 bg-white/[0.04] p-4 sm:p-8 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-sm bg-primary/15 border border-primary/40 flex items-center justify-center mb-4">
                     <Package size={20} className="text-primary" />
@@ -89,8 +89,8 @@ const Orders = ({ token }) => {
               </div>
 
               {/* Middle Column: Client Info */}
-              <div className="flex-1 p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="flex-1 p-4 sm:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12">
                   <div>
                     <h3 className="serif-title text-2xl md:text-3xl text-white mb-4">{inquiry.name}</h3>
                     <div className="space-y-3">
@@ -112,7 +112,7 @@ const Orders = ({ token }) => {
                   </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-10 items-center">
+                <div className="mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-white/10 flex flex-wrap gap-4 sm:gap-10 items-center">
                   <div>
                     <p className="text-white/40 text-xs uppercase tracking-widest font-black mb-2 italic">Application</p>
                     <p className="text-sm text-white font-bold uppercase tracking-widest px-3 py-1.5 bg-white/5 border border-white/20 rounded-sm">
@@ -143,7 +143,7 @@ const Orders = ({ token }) => {
               </div>
 
               {/* Right Column: Status Control */}
-              <div className="lg:w-72 p-8 flex flex-col justify-center gap-4 bg-white/[0.05] border-l border-white/10">
+              <div className="lg:w-72 p-4 sm:p-8 flex flex-col justify-center gap-4 bg-white/[0.05] border-t lg:border-t-0 lg:border-l border-white/10">
                 <p className="text-white text-sm uppercase tracking-[0.3em] font-black text-center italic mb-3">
                   Protocol Stage
                 </p>
