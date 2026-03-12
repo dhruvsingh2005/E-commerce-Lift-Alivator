@@ -25,6 +25,10 @@ const productSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
+  buildQuality: {
+    type: Array,
+    default: [],
+  },
   specifications: {
     type: Object,
     default: {}

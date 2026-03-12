@@ -17,6 +17,7 @@ const Add = ({ token }) => {
   const [category, setCategory] = useState("Residential");
   const [price, setPrice] = useState("");
   const [features, setFeatures] = useState([""]);
+  const [buildQuality, setBuildQuality] = useState([""]);
   const [specifications, setSpecifications] = useState("");
   const [bestSeller, setBestSeller] = useState(false);
 
@@ -37,6 +38,9 @@ const Add = ({ token }) => {
 
       const featuresArray = features.filter(f => f.trim() !== "");
       formData.append("features", JSON.stringify(featuresArray));
+
+      const buildQualityArray = buildQuality.filter(b => b.trim() !== "");
+      formData.append("buildQuality", JSON.stringify(buildQualityArray));
 
       const specsObj = {};
       specifications.split('\n').forEach(line => {
@@ -79,6 +83,7 @@ const Add = ({ token }) => {
     setCategory("Residential");
     setPrice("");
     setFeatures([""]);
+    setBuildQuality([""]);
     setSpecifications("");
     setBestSeller(false);
   };
@@ -96,6 +101,21 @@ const Add = ({ token }) => {
     const updatedFeatures = [...features];
     updatedFeatures[index] = value;
     setFeatures(updatedFeatures);
+  };
+
+  const addBuildQuality = () => {
+    setBuildQuality([...buildQuality, ""]);
+  };
+
+  const removeBuildQuality = (index) => {
+    const updated = buildQuality.filter((_, i) => i !== index);
+    setBuildQuality(updated.length === 0 ? [""] : updated);
+  };
+
+  const updateBuildQuality = (index, value) => {
+    const updated = [...buildQuality];
+    updated[index] = value;
+    setBuildQuality(updated);
   };
 
   return (
@@ -191,7 +211,6 @@ const Add = ({ token }) => {
               <option value="Industrial" className="bg-black text-white">Industrial</option>
               <option value="Goods" className="bg-black text-white">Goods Registry</option>
             </select>
-
           </div>
 
           <div>
@@ -261,49 +280,103 @@ const Add = ({ token }) => {
           </div>
           <div>
             <div className="flex items-center gap-2 mb-4">
+              <Shield size={14} className="text-primary" />
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
+                Build Quality
+              </h4>
+            </div>
+
+            <div className="border border-white/10 p-4 rounded-sm space-y-3">
+              {buildQuality.map((item, index) => (
+                <div key={index} className="flex gap-2 items-end">
+                  <div className="flex-1">
+                    <label className="text-xs text-white/60 uppercase tracking-wider block mb-2">
+                      Quality {index + 1}
+                    </label>
+                    <input
+                      type="text"
+                      value={item}
+                      onChange={(e) => updateBuildQuality(index, e.target.value)}
+                      placeholder="e.g., Titanium Finish, German Traction, SMART-LIFT OS"
+                      className="w-full bg-white/5 border border-white/10 p-2 outline-none focus:border-primary text-white text-xs font-manrope rounded-sm"
+                    />
+                  </div>
+                  {item.trim() === "" && buildQuality.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => removeBuildQuality(index)}
+                      className="px-3 py-2 bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 text-red-400 rounded-sm transition-colors flex items-center gap-1"
+                      title="Delete empty item"
+                    >
+                      <X size={16} />
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={addBuildQuality}
+              className="mt-4 w-full px-4 py-3 bg-primary/10 border border-primary/30 hover:bg-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.2em] rounded-sm transition-all"
+            >
+              + Add Build Quality
+            </button>
+
+            <p className="text-[8px] text-white/20 uppercase tracking-widest mt-2">
+              Add build quality attributes like finish, traction, OS etc.
+            </p>
+          </div>
+        </section>
+
+        {/* Specs Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
               <Cpu size={14} className="text-primary" />
               <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Technical Specs</h4>
             </div>
 
             <div className="border border-white/10 p-4 rounded-sm space-y-4">
-              <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                <label className="text-xs text-white/60 uppercase tracking-wider w-full md:w-1/4">
-                  Capacity:
-                </label>
-                <input
-                  type="number"
-                  placeholder="Enter Capacity"
-                  className="w-full md:w-3/4 bg-white/5 border border-white/10 p-2 outline-none focus:border-primary text-white text-xs font-manrope transition-colors rounded-sm"
-                  required
-                />
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs text-white/60 uppercase tracking-wider">
+                    Capacity:
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Enter Capacity"
+                    className="w-full bg-white/5 border border-white/10 p-2 outline-none focus:border-primary text-white text-xs font-manrope transition-colors rounded-sm"
+                    required
+                  />
+                </div>
 
-              <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                <label className="text-xs text-white/60 uppercase tracking-wider w-full md:w-1/4">
-                  Speed:
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter Speed"
-                  className="w-full md:w-3/4 bg-white/5 border border-white/10 p-2 outline-none focus:border-primary text-white text-xs font-manrope transition-colors rounded-sm"
-                  required
-                />
-              </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs text-white/60 uppercase tracking-wider">
+                    Speed:
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter Speed"
+                    className="w-full bg-white/5 border border-white/10 p-2 outline-none focus:border-primary text-white text-xs font-manrope transition-colors rounded-sm"
+                    required
+                  />
+                </div>
 
-              <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                <label className="text-xs text-white/60 uppercase tracking-wider w-full md:w-1/4">
-                  Drive:
-                </label>
-                <select
-                  className="w-full md:w-3/4 bg-black border border-white/60 p-2 outline-none focus:border-primary text-primary text-xs font-manrope transition-colors rounded-sm"
-                  required
-                >
-                  <option className="bg-black text-primary" value="">Select Drive Type</option>
-                  <option className="bg-black text-white" value="Gearless">Gearless</option>
-                  <option className="bg-black text-white" value="Geared">Geared</option>
-                  <option className="bg-black text-white" value="Hydraulic">Hydraulic</option>
-                </select>
-
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs text-white/60 uppercase tracking-wider">
+                    Drive:
+                  </label>
+                  <select
+                    className="w-full bg-black border border-white/60 p-2 outline-none focus:border-primary text-primary text-xs font-manrope transition-colors rounded-sm"
+                    required
+                  >
+                    <option className="bg-black text-primary" value="">Select Drive Type</option>
+                    <option className="bg-black text-white" value="Gearless">Gearless</option>
+                    <option className="bg-black text-white" value="Geared">Geared</option>
+                    <option className="bg-black text-white" value="Hydraulic">Hydraulic</option>
+                  </select>
+                </div>
               </div>
             </div>
 

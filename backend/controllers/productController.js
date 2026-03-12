@@ -10,6 +10,7 @@ const addProduct = async (req, res) => {
       price,
       category,
       features,
+      buildQuality,
       specifications,
       bestSeller,
     } = req.body;
@@ -38,6 +39,7 @@ const addProduct = async (req, res) => {
       price: Number(price),
       category,
       features: JSON.parse(features),
+      buildQuality: buildQuality ? JSON.parse(buildQuality) : [],
       specifications: JSON.parse(specifications),
       bestSeller: bestSeller === "true" ? true : false,
       image: imageUrls,
