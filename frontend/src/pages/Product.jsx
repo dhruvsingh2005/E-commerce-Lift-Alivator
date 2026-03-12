@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Info } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
+import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
   const { productId } = useParams();
@@ -83,10 +84,19 @@ const Product = () => {
                 </div>
                 <div className="p-6 border-l border-white/10">
                   <h4 className="text-white/40 text-[9px] uppercase tracking-widest font-bold mb-4 font-manrope">Build Quality</h4>
-                  <ul className="space-y-3 text-white/40 text-[11px] uppercase tracking-wider font-manrope">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={12} /> Titanium Finish</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={12} /> German Traction</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={12} /> SMART-LIFT OS</li>
+                  <ul className="space-y-3">
+                    {productData.buildQuality?.length > 0 ? (
+                      productData.buildQuality.map((item, i) => (
+                        <li key={i} className="text-white text-[11px] uppercase tracking-wider flex items-center gap-2 font-manrope">
+                          <CheckCircle2 size={12} className="text-primary" /> {item}
+                        </li>
+                      ))
+                    ) : (
+                      <>
+                        <li className="text-white/40 text-[11px] uppercase tracking-wider flex items-center gap-2 font-manrope"><CheckCircle2 size={12} /> Premium Finish</li>
+                        <li className="text-white/40 text-[11px] uppercase tracking-wider flex items-center gap-2 font-manrope"><CheckCircle2 size={12} /> Quality Assured</li>
+                      </>
+                    )}
                   </ul>
                 </div>
               </div>
@@ -130,6 +140,10 @@ const Product = () => {
           </div>
         </section>
         
+        {productData.category && (
+          <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+        )}
+
         <ContactSection />
       </div>
     </div>

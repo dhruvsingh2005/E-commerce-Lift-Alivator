@@ -139,11 +139,11 @@ const ContactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-white font-bold ml-1">Phone Number</label>
-                    <input onChange={handlePhoneChange} value={phone} type="tel" placeholder="0000000000" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/60 focus:border-[#F26522] transition-all outline-none" required />
+                    <input onChange={handlePhoneChange} value={phone} type="tel" placeholder="9999999999" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/60 focus:border-[#F26522] transition-all outline-none" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-white font-bold ml-1">City</label>
-                    <input onChange={(e) => setCity(e.target.value)} value={city} type="text" placeholder="Indore" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/60 focus:border-[#F26522] transition-all outline-none" required />
+                    <input onChange={(e) => setCity(e.target.value)} value={city} type="text" placeholder="City" className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white placeholder-white/60 focus:border-[#F26522] transition-all outline-none" required />
                   </div>
                 </div>
 
